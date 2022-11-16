@@ -25,9 +25,9 @@ Background:
 |  35579678N    |     6364     |   Responsable Impresion  |
  And el usuario se dirige a la pantalla Bandeja de Salida y se encuentra la documentacion generada
  
-@descargarFormulario
+@descargaFormulario
   Scenario Outline: Verificar que el usuario que se descarge el formualirio de adiestramiento para un trabajador  ya venga con su nombre y dni en dicho formulario
-    When el usuario se descarga el formulario de adiestramiento con lote "<lote>", dni "<dni>" y puesto "<puesto>" 
+    When el usuario se descarga el formulario de adiestramiento con lote "<lote>" , dni "<dni>" y puesto "<puesto>" 
 		Then el usuario verifica que esta incluido el nombre del trabajador "<nombreTrabajador>"
 		And el usuario verifica que esta incluido  el dni "<dni>"
 
@@ -38,14 +38,14 @@ Background:
 | prl2      | Primera08  |   4096    |    Responsable                |  35579678N    |     6364     | MIGUEL CADENAS AMANDI   |
 | prl3      | Primera08  |   4096    |   Responsable Impresion       |  35579678N    |     6364     | MIGUEL CADENAS AMANDI   |
 
-@VerificaNoSeEncuentraLasRespuestas
+@VerficaFormularioSinRespuesta
 Scenario Outline: Verifica que el archivo con el contenido de las respuesta no se encuentra en la descarga.
-When el usuario se descarga el formulario de adiestramiento con lote "<lote>", dni "<dni>" y puesto "<puesto>" 
+When el usuario se descarga el formulario de adiestramiento con lote "<lote>", dni "<dni>" y puesto "<puesto>" y el CUR
 Then el usuario no encuentra el archivo con las respuestas.
     Examples: 
 |    lote                   |     dni       |      puesto   |  
 |   Tecnico Central         |  35579678N    |      6364     |
-#|   Tecnico Zona            |  35579678N    |     6364     |
-#|   Responsable             |  35579678N    |     6364     |
-#|    Responsable Impresion  |  35579678N    |     6364     |
+|   Tecnico Zona            |  35579678N    |     6364     |
+|   Responsable             |  35579678N    |     6364     |
+|    Responsable Impresion  |  35579678N    |     6364     |
 

@@ -3,22 +3,28 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.thucydides.core.annotations.Feature;
+
+@Feature
 public class Usuario {
 
 	public String nombre;
-	public String dni;
+	public String password;
 	public String rol;
 	
-	public Usuario(String nombre, String dni, String rol) {
+	public Usuario(String nombre, String password, String rol) {
 	this.nombre=nombre;
-	this.dni=dni;
+	this.password=password;
 	this.rol=rol;
 	}
-	public Usuario(String nombre, String dni) {
+	public Usuario(String nombre, String password) {
 		this.nombre=nombre;
-		this.dni=dni;
+		this.password=password;
 		
 		}
+
+	
+	
 	
 	public static List<Usuario>usuarios=new ArrayList<Usuario>();
 

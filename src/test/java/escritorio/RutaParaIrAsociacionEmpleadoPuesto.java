@@ -22,9 +22,7 @@ public class RutaParaIrAsociacionEmpleadoPuesto extends UIInteractionSteps {
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2
 						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 3
 						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
 				enlace.click();
@@ -32,7 +30,7 @@ public class RutaParaIrAsociacionEmpleadoPuesto extends UIInteractionSteps {
 
 			if (enlace == PageEscritorio.DOCUMENTACION) {
 				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona documentacion", "irDocumentacion");
 				}
 				enlace.click();
@@ -40,7 +38,7 @@ public class RutaParaIrAsociacionEmpleadoPuesto extends UIInteractionSteps {
 
 			if (enlace == PageEscritorio.ASOCIACION_EMPLEADO_PUESTO) {
 				Espera.espera(2000);
-				if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7) {
+				if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Asociacion Empleado Puesto",
 							"irAsociacionEmpleadoPuesto");
 				}

@@ -54,7 +54,7 @@ public class GeneraDocumentacion extends UIInteractionSteps {
 	@Step("El usuario pulsa el boton Aceptar")
 	private void pulsarAceptar() {
 		espera.queSeaVisible(Duration.ofSeconds(15), PageAsociacionEmpleadoPuesto.botonAceptar);
-		if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7) {
+		if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
 			AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario pulsa el botón Aceptar" ,"pulsarBotonAceptar");
 			}
 		PageAsociacionEmpleadoPuesto.botonAceptar.click();

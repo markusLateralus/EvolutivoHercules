@@ -25,9 +25,7 @@ public class RutaParaIrBandejaDeSalida extends UIInteractionSteps {
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2
 						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 3
 						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
 				enlace.click();
@@ -35,7 +33,7 @@ public class RutaParaIrBandejaDeSalida extends UIInteractionSteps {
 
 			if (enlace == PageEscritorio.BANDEJA_DE_SALIDA) {
 				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Bandeja De Salida",
 							"irBandejaDeSalida");
 				}

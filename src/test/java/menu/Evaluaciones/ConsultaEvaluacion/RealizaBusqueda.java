@@ -48,7 +48,7 @@ public class RealizaBusqueda extends UIInteractionSteps {
 	 private void rellenarCheckBox() {
 	        WebElement checkBox=pageConsultaEvaluacion.MAT.findElement(By.xpath("(//div[@class=\"mat-checkbox-inner-container\"])[1]"));
 	        checkBox.click();
-	        if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==3 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==4 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
+	        if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==3) {
 				 AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario rellena el formulario", "RellenarFormulario");
 			}
 	 }

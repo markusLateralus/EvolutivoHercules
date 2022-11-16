@@ -17,7 +17,7 @@ PageInstrucionesGuia instruccionesGuia;
 	    public void alPulsarIcono() {
 		 espera.queSeaclicable(Duration.ofSeconds(15), PageInstrucionesGuia.BOTON_DESCARGAR);
 		 PageInstrucionesGuia.BOTON_DESCARGAR.click();
-		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==6) {
+		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==4) {
 				AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario se descarga la documentacion de Instrucciones guías" ,"DescargarDocumentacion");
 			}
 		 Espera.espera(2000);

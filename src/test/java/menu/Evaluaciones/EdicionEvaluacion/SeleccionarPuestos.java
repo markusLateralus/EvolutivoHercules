@@ -22,7 +22,7 @@ public class SeleccionarPuestos extends UIInteractionSteps {
 	    private void seleccionarPestania() {
 	
 		 espera.queSeaclicable(Duration.ofSeconds(20), PageEdicionEvaluacion.PESTANIA_PUESTOS);
-		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==3 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==4 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
+		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==3) {
 			 AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario selecciona la pestaña puestos", "seleccionarPuestos");
 		}
 		
@@ -32,7 +32,7 @@ public class SeleccionarPuestos extends UIInteractionSteps {
 	 @Step("El usuario selecciona el primer puesto para acceder a su edicion")
 	    private void hacerDobleClick() {
 		 espera.queSeaclicable(Duration.ofSeconds(15),PageEdicionEvaluacion.PRIMER_VALOR_TABLA_PESTANIA_PUESTOS);
-		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==3 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==4 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
+		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==3) {
 			 AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario selecciona el valor de la tabla", "seleecionarValorTabla");
 		}
 		 Actions action=new Actions(this.getDriver());

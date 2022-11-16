@@ -3,7 +3,13 @@ package steps;
 import login.Navega;
 import menu.Documentacion.CoordinacionCliente.ConsultaDocumentos.RealizaBusqueda;
 import menu.Documentacion.CoordinacionCliente.ConsultaDocumentos.ResultadosDeLaBusqueda;
+
+import java.util.Collection;
+
 import escritorio.RutaParaIrConsultaDeDocumentos;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,6 +17,9 @@ import io.cucumber.java.en.When;
 import login.Logarse;
 
 import net.thucydides.core.annotations.Steps;
+import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
+import utiles.capturasPantallas.CapturaPantalla;
+import utiles.crearPdf.FactoriaPDF;
 
 public class DescargarConsultaDocumentosStep {
 
@@ -25,7 +34,11 @@ public class DescargarConsultaDocumentosStep {
 	@Steps
 	ResultadosDeLaBusqueda resultadosDeLaBusqueda;
 
-	
+
+	@Before()
+	public void antes() {
+		AlmacenRutasDeCapturaPantalla.setValorRuta(1);
+	}
 	@Given("el usuario se logea de forma correcta con usuario: {string}, password: {string} y con el rol: {string}")
 	public void el_usuario_se_logea_de_forma_correcta_con_usuario_password_y_con_el_rol(String usuario, String password, String string3) {
 		navega.aLogin();
@@ -44,6 +57,12 @@ public class DescargarConsultaDocumentosStep {
 		resultadosDeLaBusqueda.descargar();
 	}
 
+	@After()
+	public void guardar() {
+		FactoriaPDF.crearPdf(AlmacenRutasDeCapturaPantalla.VALOR_RUTA,	CapturaPantalla.CONTADOR_VUELTAS_APLICACION);
+		
 
+	      
+	       }
 
 }

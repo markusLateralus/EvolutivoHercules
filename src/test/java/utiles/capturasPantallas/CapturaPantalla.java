@@ -21,18 +21,16 @@ public class CapturaPantalla extends UIInteractionSteps{
 	public static String RUTA_IMAGEN_LOGIN="./documentos/login/";
 	public static String RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_CONSULTADOCUMENTACION="./documentos/documentacion/coordinacion_cliente/consulta_documentos/";
 	public static String RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_COORDINACION="./documentos/documentacion/coordinacion_cliente/coordinacion/";
-	public static String RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_Boton1="./documentos/evaluaciones/consulta_evaluacion/ign/boton1/";
-	public static String RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_Boton2="./documentos/evaluaciones/consulta_evaluacion/ign/boton2/";
-	public static String RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGCT="./documentos/evaluaciones/consulta_evaluacion/igct/";
+	public static String RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_IGCT="./documentos/evaluaciones/consulta_evaluacion/";
+	//public static String RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_Boton2="./documentos/evaluaciones/consulta_evaluacion/ign/boton2/";
+	//public static String RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGCT="./documentos/evaluaciones/consulta_evaluacion/igct/";
 	public static String RUTA_IMAGEN_HERRAMIENTAS_ADMINISTRACION_INSTRUCIONESGUIAS="./documentos/herramientas/administracion/instrucciones_guias/";
 	public static String RUTA_IMAGEN_DOCUMENTACION_ASOCIACIONEMPLEADOPUESTO_FORMULARIOADIESTRAMIENTO="./documentos/documentacion/Asociacion_Empleado_Puesto/FormularioAdiestramiento/";
 	public static String RUTAS_IMAGENES[]= {
 							RUTA_IMAGEN_LOGIN,
 							RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_CONSULTADOCUMENTACION,
 			                RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_COORDINACION,
-						    RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_Boton1,
-						    RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_Boton2,
-						   RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGCT,
+						    RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_IGCT,
 						  RUTA_IMAGEN_HERRAMIENTAS_ADMINISTRACION_INSTRUCIONESGUIAS,
 						  RUTA_IMAGEN_DOCUMENTACION_ASOCIACIONEMPLEADOPUESTO_FORMULARIOADIESTRAMIENTO};
 	

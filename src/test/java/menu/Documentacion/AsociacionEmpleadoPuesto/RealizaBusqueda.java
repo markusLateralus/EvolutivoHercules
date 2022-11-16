@@ -33,7 +33,7 @@ PageAsociacionEmpleadoPuesto asociacionEmpleadoPuesto;
 	 private void buscar() {
 	
 		 espera.queSeaclicable(Duration.ofSeconds(20), PageAsociacionEmpleadoPuesto.botonBUSCAR);
-		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7 ) {
+		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5 ) {
 			  AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario realiza la búsqueda", "realizarBusqueda");
 		}
 		 

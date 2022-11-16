@@ -17,7 +17,7 @@ PageInstrucionesGuia instruccionesGuia;
 		 espera.queSeaclicable(Duration.ofSeconds(15), PageInstrucionesGuia.CAMPO_BUSCADOR);
 		 PageInstrucionesGuia.CAMPO_BUSCADOR.sendKeys(busqueda);
 		 Espera.espera(1500);
-		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==6) {
+		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==4) {
 				AlmacenRutasDeCapturaPantalla.guardarRuta("El ususario realiza la búsqueda en el buscador" ,"EscribirEnBuscador");
 			}
 		 PageInstrucionesGuia.CAMPO_BUSCADOR.sendKeys(Keys.ENTER);

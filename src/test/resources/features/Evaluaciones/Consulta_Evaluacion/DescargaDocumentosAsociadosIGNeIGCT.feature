@@ -23,7 +23,7 @@ And el usuario accede a la pantalla Edicion Evalucion
 And el usuario accede a la la pantalla Edicion Puesto
 
 
-@boton1
+@ignBoton1
 Scenario Outline: Descargar consultas sobre Ins. Guias Nacioales boton1
 When el usuario selecciona la pestania Ins Guias Nacionales
 Then el usuario pulsa el boton "<boton>" y se descarga la documentacion Ins Guias Nacionales correctamente
@@ -34,7 +34,7 @@ Examples:
 |boton1  |
 |boton1  |
 
-@boton2
+@ignBoton2
 Scenario Outline: Descargar consultas sobre Ins. Guias Nacioales boton2
 When el usuario selecciona la pestania Ins Guias Nacionales
 Then el usuario pulsa el boton "<boton>" y se descarga la documentacion Ins Guias Nacionales correctamente

@@ -1,9 +1,14 @@
 package steps;
 
+import java.util.Collection;
+
 import escritorio.RutaParaIrInstrccionesGuias;
 import login.Navega;
 import menu.Herramientas.Administracion.InstruccionesGuias.RealizaBusqueda;
 import menu.Herramientas.Administracion.InstruccionesGuias.RealizaDescarga;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,6 +16,9 @@ import io.cucumber.java.en.When;
 import login.Logarse;
 
 import net.thucydides.core.annotations.Steps;
+import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
+import utiles.capturasPantallas.CapturaPantalla;
+import utiles.crearPdf.FactoriaPDF;
 
 public class DescargarInstruccionesGuiasStep {
 
@@ -25,6 +33,12 @@ public class DescargarInstruccionesGuiasStep {
 	@Steps
 	RealizaDescarga realizaDescarga;
 
+	@Before()
+	public void antes() {
+		//reiniciamos los contadores
+		AlmacenRutasDeCapturaPantalla.setValorRuta(4);
+	}
+		
 	@Given("el usuario se logea en Hercules con usuario: {string}, password: {string} y con el rol: {string}")
 	public void el_usuario_se_logea_en_hercules_con_usuario_password_y_con_el_rol(String usuario, String password, String string3) {
 		navega.aLogin();
@@ -43,6 +57,11 @@ public class DescargarInstruccionesGuiasStep {
 		realizaDescarga.alPulsarIcono();
 	}
 
+
+@After()
+public void guardar() {
+	FactoriaPDF.crearPdf(AlmacenRutasDeCapturaPantalla.VALOR_RUTA,	CapturaPantalla.CONTADOR_VUELTAS_APLICACION); 
+       }
 	
 
 
