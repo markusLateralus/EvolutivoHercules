@@ -1,11 +1,13 @@
 package steps;
 
 import java.util.Collection;
+import java.util.List;
 
 import escritorio.RutaParaIrInstrccionesGuias;
 import login.Navega;
 import menu.Herramientas.Administracion.InstruccionesGuias.RealizaBusqueda;
 import menu.Herramientas.Administracion.InstruccionesGuias.RealizaDescarga;
+import modelo.Usuario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -18,10 +20,15 @@ import login.Logarse;
 import net.thucydides.core.annotations.Steps;
 import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
 import utiles.capturasPantallas.CapturaPantalla;
+import utiles.componentesDelPdf.Descripcion;
+import utiles.componentesDelPdf.Sprint;
+import utiles.componentesDelPdf.TituloPortada;
 import utiles.crearPdf.FactoriaPDF;
 
 public class DescargarInstruccionesGuiasStep {
-
+	
+	private static int CONTADOR=1;
+	private String rutaEscenario="";
 	@Steps 
 	Navega navega;
 	@Steps
@@ -33,24 +40,36 @@ public class DescargarInstruccionesGuiasStep {
 	@Steps
 	RealizaDescarga realizaDescarga;
 
-	@Before()
-	public void antes() {
+	@Before("@descargaInstruccionesGuias")
+	public void antes(Scenario escenario) {
 		//reiniciamos los contadores
-		AlmacenRutasDeCapturaPantalla.setValorRuta(4);
+				Collection<String> etiquetas=escenario.getSourceTagNames();
+				for(String esc: etiquetas) {
+					rutaEscenario=esc;	
+				}
+		AlmacenRutasDeCapturaPantalla.Ruta_Escenario=rutaEscenario;
+	//	AlmacenRutasDeCapturaPantalla.setValorRuta(4);
 	}
-		
-	@Given("el usuario se logea en Hercules con usuario: {string}, password: {string} y con el rol: {string}")
-	public void el_usuario_se_logea_en_hercules_con_usuario_password_y_con_el_rol(String usuario, String password, String string3) {
+	@Given("el usuairo entra en Hercules estando logado")
+	public void el_usuairo_entra_en_hercules_estando_logado(io.cucumber.datatable.DataTable dataTable) {
 		navega.aLogin();
-		logarse.conUsuarioYpassword(usuario, password);
+			List<List<String>> rows = dataTable.asLists(String.class);
+		for (List<String> row : rows) {
+			Usuario.agregar(new Usuario(row.get(0), row.get(1), row.get(2)));
+		}
+		
+	logarse.rellenarUsuario(Usuario.usuarios.get(CONTADOR).nombre);
+	logarse.rellenarPassword(Usuario.usuarios.get(CONTADOR).password);
+	logarse.pulsarBotonLogin();
+
 	}
-	@When("el usuario se dirige a la pantalla Instrucciones Guias")
-	public void el_usuario_se_dirige_a_la_pantalla_instrucciones_guias() {
-		 rutaParaIrInstruccionesGuias.accede();
+	@Given("se dirige a la pantlla Instrucciones Guias")
+	public void se_dirige_a_la_pantlla_instrucciones_guias() {
+		rutaParaIrInstruccionesGuias.accede();
 	}
 	@When("el usuario realiza una busqueda por {string}")
-	public void el_usuario_realiza_una_busqueda_por(String buscar) {
-		   realizaBusqueda.conElValor(buscar);
+	public void el_usuario_realiza_una_busqueda_por(String busqueda) {
+		  realizaBusqueda.conElValor(busqueda);
 	}
 	@Then("se descarga la documentacion Instrucciones Guias")
 	public void se_descarga_la_documentacion_instrucciones_guias() {
@@ -58,9 +77,12 @@ public class DescargarInstruccionesGuiasStep {
 	}
 
 
-@After()
+@After("@descargaInstruccionesGuias")
 public void guardar() {
-	FactoriaPDF.crearPdf(AlmacenRutasDeCapturaPantalla.VALOR_RUTA,	CapturaPantalla.CONTADOR_VUELTAS_APLICACION); 
+	FactoriaPDF.crearPdf(AlmacenRutasDeCapturaPantalla.VALOR_RUTA,CONTADOR,rutaEscenario,TituloPortada.TITULO_DESCARGAR_INSTRUCCIONESGUIAS,
+	Descripcion.DESCRIPCION_INSTRUCCIONESGUIAS,Sprint.Sprint1 );
+
+	rutaEscenario="";
        }
 	
 

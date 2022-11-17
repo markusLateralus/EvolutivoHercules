@@ -18,10 +18,7 @@ public class RutaParaIrInstrccionesGuias extends UIInteractionSteps{
 
 			if (enlace == PageEscritorio.MENU) {
 				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 3
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
 				enlace.click();

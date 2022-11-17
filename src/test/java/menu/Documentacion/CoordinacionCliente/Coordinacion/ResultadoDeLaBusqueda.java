@@ -25,7 +25,7 @@ public class ResultadoDeLaBusqueda extends UIInteractionSteps {
 		      AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario seleccona un resultado de la busqueda y accede a la pantalla Coordinacion Acciones", "seleccionarResultado");
 		}
 		action.doubleClick(PageCoordinacion.RESULTADO_BUSQUEDA).perform();
-		Espera.espera(3000);
+		Espera.espera(5000);
 	}
 
 	 

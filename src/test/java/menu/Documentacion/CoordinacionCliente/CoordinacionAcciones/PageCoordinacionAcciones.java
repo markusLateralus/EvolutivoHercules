@@ -9,6 +9,6 @@ import net.serenitybdd.core.pages.PageObject;
 
 public class PageCoordinacionAcciones extends PageObject{
 
-	 @FindBy(xpath="(//div[@class=\"span-icon\"])[2]")
+	 @FindBy(id="download")
 	 static WebElement BOTON_DESCARGAR;
 }

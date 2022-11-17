@@ -19,22 +19,24 @@ public class CapturaPantalla extends UIInteractionSteps{
 	
 //	public static List<File>ficherosPNG=new ArrayList();
 	public static String RUTA_IMAGEN_LOGIN="./documentos/login/";
-	public static String RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_CONSULTADOCUMENTACION="./documentos/documentacion/coordinacion_cliente/consulta_documentos/";
-	public static String RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_COORDINACION="./documentos/documentacion/coordinacion_cliente/coordinacion/";
+	public static String RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_CONSULTADOCUMENTACION="./documentos/consulta_documentos/";
+	public static String RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_COORDINACION="./documentos/coordinacion/";
 	public static String RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_IGCT="./documentos/evaluaciones/consulta_evaluacion/";
-	//public static String RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_Boton2="./documentos/evaluaciones/consulta_evaluacion/ign/boton2/";
-	//public static String RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGCT="./documentos/evaluaciones/consulta_evaluacion/igct/";
-	public static String RUTA_IMAGEN_HERRAMIENTAS_ADMINISTRACION_INSTRUCIONESGUIAS="./documentos/herramientas/administracion/instrucciones_guias/";
-	public static String RUTA_IMAGEN_DOCUMENTACION_ASOCIACIONEMPLEADOPUESTO_FORMULARIOADIESTRAMIENTO="./documentos/documentacion/Asociacion_Empleado_Puesto/FormularioAdiestramiento/";
+	public static String RUTA_IMAGEN_HERRAMIENTAS_ADMINISTRACION_INSTRUCIONESGUIAS="./documentos/instrucciones_guias/";
+	public static String RUTA_IMAGEN_DOCUMENTACION_ASOCIACIONEMPLEADOPUESTO_FORMULARIOADIESTRAMIENTO="./documentos/FormularioAdiestramiento/";
+	public static String RUTA_IMAGEN_ALTA_DE_USUARIO="./documentos/AltaDeUsuario/";
+	public static String RUTA_IMAGEN_MODIFICACION_PERFIL_TECNICODEZONA="./documentos/ModificacionPerfilTecnicoDeZona/";
 	public static String RUTAS_IMAGENES[]= {
 							RUTA_IMAGEN_LOGIN,
 							RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_CONSULTADOCUMENTACION,
 			                RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_COORDINACION,
 						    RUTA_IMAGEN_EVALUACIONES_CONSULTAEVALUACION_IGN_IGCT,
 						  RUTA_IMAGEN_HERRAMIENTAS_ADMINISTRACION_INSTRUCIONESGUIAS,
-						  RUTA_IMAGEN_DOCUMENTACION_ASOCIACIONEMPLEADOPUESTO_FORMULARIOADIESTRAMIENTO};
+						  RUTA_IMAGEN_DOCUMENTACION_ASOCIACIONEMPLEADOPUESTO_FORMULARIOADIESTRAMIENTO,
+						  RUTA_IMAGEN_ALTA_DE_USUARIO,
+						  RUTA_IMAGEN_MODIFICACION_PERFIL_TECNICODEZONA};
 	
-	//public static String RUTA_PREDINIDA=RUTAS_IMAGENES[5];
+	
 	
 	public static Map<String,File>ImagenesPNG=new LinkedHashMap<>();
 	 //  Map<String,File> linkedHashMap = new LinkedHashMap<>();

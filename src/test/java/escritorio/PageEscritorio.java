@@ -52,6 +52,25 @@ public class PageEscritorio extends PageObject{
 	  @FindBy(xpath="(//div[normalize-space()='Bandeja de Salida'])[1]")
 	  public static WebElement BANDEJA_DE_SALIDA;
 	  
+	  //sprint 4
+	  @FindBy(xpath="(//div[normalize-space()='Seguridad'])[1]")
+	  public static WebElement SEGURIDAD;
+	  @FindBy(xpath="(//div[normalize-space()='Usuarios'])[1]")
+	  public static WebElement USUARIOS;
+	  @FindBy(xpath="(//mat-tree-node[@role='treeitem'])[3]")
+	  public static WebElement REEMPLAZAR_RESPONSABLE;
+	  @FindBy(xpath="(//div[normalize-space()='Fichas'])[1]")
+	  public static WebElement FICHAS;
+	  @FindBy(xpath="(//div[normalize-space()='Editar Ficha'])[1]")
+	  public static WebElement EDITAR_FICHAS;
+	  @FindBy(xpath="(//div[normalize-space()='Riesgos'])[1]")
+	  public static WebElement RIESGOS;
+	  @FindBy(xpath="(//div[normalize-space()='Consulta Riesgos'])[1]")
+	  public static WebElement CONSULTA_RIESGOS;
+	  @FindBy(xpath="(//div[normalize-space()='Publicaciones Pendientes'])[1]")
+	  public static WebElement PUBLICACIONES_PENDIENTES;
+	  @FindBy(xpath="(//div[normalize-space()='Alta Evaluación'])[1]")
+	  public static WebElement ALTA_EVALUACION;
 	  public static ArrayList <WebElement>ENLACES=new ArrayList<WebElement>();
 	  public static void cargarLosEnlaces() {
 		  ENLACES.add(MENU);
@@ -66,6 +85,15 @@ public class PageEscritorio extends PageObject{
 		  ENLACES.add(BANDEJA_DE_SALIDA);
 		  ENLACES.add(EVALUACIONES);
 		  ENLACES.add(CONSULTA_EVALUACION);
+		  ENLACES.add(SEGURIDAD);
+		  ENLACES.add(USUARIOS);
+		  ENLACES.add(REEMPLAZAR_RESPONSABLE);
+		  ENLACES.add(FICHAS);
+		  ENLACES.add(EDITAR_FICHAS);
+		  ENLACES.add(RIESGOS);
+		  ENLACES.add(CONSULTA_RIESGOS);
+		  ENLACES.add(PUBLICACIONES_PENDIENTES);
+		  ENLACES.add(ALTA_EVALUACION);
 	  }
 
 }

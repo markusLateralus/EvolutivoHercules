@@ -20,10 +20,6 @@ espera.implicitamente(7);
 			if (enlace == PageEscritorio.MENU) {
 		         // Espera.espera(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 3
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5
-						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6
 						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
@@ -32,7 +28,7 @@ espera.implicitamente(7);
 
 			if (enlace == PageEscritorio.DOCUMENTACION) {
 		       //   Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona documentacion", "irDocumentacion");
 				}
 				enlace.click();
@@ -40,7 +36,7 @@ espera.implicitamente(7);
 
 			if (enlace == PageEscritorio.COORDINACION_CLIENTE) {
 		       //   Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Coordinación Cliente",
 							"irCoordinacionCliente");
 				}
@@ -49,7 +45,7 @@ espera.implicitamente(7);
 
 			if (enlace == PageEscritorio.CONSULTA_DOCUMENTOS) {
 		        //  Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Consulta Documentos",
 							"irConsultaDocumentos");
 				}

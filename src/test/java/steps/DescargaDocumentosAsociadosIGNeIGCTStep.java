@@ -64,24 +64,21 @@ public class DescargaDocumentosAsociadosIGNeIGCTStep {
 
 	}
 
-	@Before()
+	@Before("@ignBoton1 or @ignBoton2 or @igct")
 	public void antes(Scenario scenario) {
 		this.llenarEnumerados();
 		// reiniciamos los contadores
 		if (CONTADOR == 5)
 			CONTADOR = 1;
-		if (CapturaPantalla.CONTADOR_VUELTAS_APLICACION >= 5)
-			CapturaPantalla.CONTADOR_VUELTAS_APLICACION = 1;
+		//if (CapturaPantalla.CONTADOR_VUELTAS_APLICACION >= 5)CapturaPantalla.CONTADOR_VUELTAS_APLICACION = 1;
 
 		Collection<String> etiquetas = scenario.getSourceTagNames();
 		for (String etiqueta : etiquetas) {
 			rutaEscenario = etiqueta;
-			System.out.println("escenario ANTES " + rutaEscenario);
 		}
 		AlmacenRutasDeCapturaPantalla.Ruta_Escenario = rutaEscenario;
-		AlmacenRutasDeCapturaPantalla.setValorRuta(3);
-		System.out.println("contador antes " + CONTADOR + ", contador captura pantalla: "
-				+ CapturaPantalla.CONTADOR_VUELTAS_APLICACION);
+		//AlmacenRutasDeCapturaPantalla.setValorRuta(3);
+		
 	}
 
 	@Given("^el usuario entra en Hercules$")
@@ -152,7 +149,7 @@ public class DescargaDocumentosAsociadosIGNeIGCTStep {
 		 descargaIGCT.descargarGuiaClienteProyecto(rutaEscenario);
 	}
 
-	@After()
+	@After("@ignBoton1 or @ignBoton2 or @igct")
 	public void despues(Scenario escenario) {
 		Collection<String> etiquetas = escenario.getSourceTagNames();
 		for (String etiqueta : etiquetas) {
@@ -173,13 +170,12 @@ public class DescargaDocumentosAsociadosIGNeIGCTStep {
 
 			}
 		}
-		CapturaPantalla.CONTADOR_VUELTAS_APLICACION++;
+		//CapturaPantalla.CONTADOR_VUELTAS_APLICACION++; NO SE SI HE HECHO BIEN EN COMENTAR
 		CONTADOR++;
 		// reseteamos las rutas
 		AlmacenRutasDeCapturaPantalla.Ruta_Escenario = "";
 		rutaEscenario = "";
-		System.out.println("contador despues " + CONTADOR + ", contador captura pantalla: "
-				+ CapturaPantalla.CONTADOR_VUELTAS_APLICACION);
+		
 
 	}
 
