@@ -3,7 +3,7 @@ package steps;
 import java.util.Collection;
 import java.util.List;
 
-import escritorio.RutaParaIrInstrccionesGuias;
+import escritorio.NavegaAinstrccionesGuias;
 import login.Navega;
 import menu.Herramientas.Administracion.InstruccionesGuias.RealizaBusqueda;
 import menu.Herramientas.Administracion.InstruccionesGuias.RealizaDescarga;
@@ -34,7 +34,7 @@ public class DescargarInstruccionesGuiasStep {
 	@Steps
 	Logarse logarse;
 	@Steps
-	RutaParaIrInstrccionesGuias rutaParaIrInstruccionesGuias;
+	NavegaAinstrccionesGuias rutaParaIrInstruccionesGuias;
 	@Steps
 	RealizaBusqueda realizaBusqueda;
 	@Steps

@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.Step;
 import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
 import utiles.esperas.Espera;
 
-public class RutaParaIrAdministracionUsuarios extends UIInteractionSteps{
+public class NavegaAinstrccionesGuias extends UIInteractionSteps{
 
 	Espera espera = new Espera();
 
@@ -18,45 +18,37 @@ public class RutaParaIrAdministracionUsuarios extends UIInteractionSteps{
 
 			if (enlace == PageEscritorio.MENU) {
 				Espera.espera(2000);
-				if ( AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
 				enlace.click();
-			}	
-			
+			}
+
 			if (enlace == PageEscritorio.HERRAMIENTAS) {
 				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
-					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Herramientas","irHerramientas");
-				
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4) {
+					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Herramientas", "irHerramientas");
+					
 				}
 				enlace.click();
 			}
 
 			if (enlace == PageEscritorio.ADMINISTRACION) {
 				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Administracion","irAdministracion");
 				
 				}
 				enlace.click();
 			}
 
-			if (enlace == PageEscritorio.SEGURIDAD) {
+			if (enlace == PageEscritorio.INSTRUCCIONES_GUIAS) {
 				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
-					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Seguridad",
-							"irSeguridad");
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4) {
+					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Instrucciones Guias",
+							"irInstruccionesGuias");
 				}
 				enlace.click();
-			}
-			if (enlace == PageEscritorio.USUARIOS) {
-			Espera.espera(2000);
-			if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
-				AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Usuarios",
-						"irUsuarios");
-			}
-			enlace.click();
 			}
 		}
 	}

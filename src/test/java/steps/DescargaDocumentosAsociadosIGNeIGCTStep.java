@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import escritorio.RutaParaIrConsultaEvaluacion;
+import escritorio.NavegaAconsultaEvaluacion;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -38,7 +38,7 @@ public class DescargaDocumentosAsociadosIGNeIGCTStep {
 	@Steps
 	Logarse logarse;
 	@Steps
-	RutaParaIrConsultaEvaluacion rutaParaIrConsultaEvaluacion;
+	NavegaAconsultaEvaluacion rutaParaIrConsultaEvaluacion;
 	@Steps
 	RealizaBusqueda realizaBusqueda;
 	@Steps

@@ -9,11 +9,11 @@ import net.thucydides.core.annotations.Step;
 import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
 import utiles.esperas.Espera;
 
-public class RutaParaIrReemplazarResponsables extends UIInteractionSteps {
+public class NavegaApublicacionesPendientes extends UIInteractionSteps {
 
 	Espera espera = new Espera();
 
-	@Step("El usuario accede a la Pantalla Reemplazar Responsables")
+	@Step("El usuario accede a la Pantalla Publicaciones Pendientes")
 	public void accede() {
 		PageEscritorio.cargarLosEnlaces();
 
@@ -27,19 +27,19 @@ public class RutaParaIrReemplazarResponsables extends UIInteractionSteps {
 				enlace.click();
 			}
 
-			if (enlace == PageEscritorio.EVALUACIONES) {
+			if (enlace == PageEscritorio.DOCUMENTACION) {
 				Espera.espera(2000);
 				if ( AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
-					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Evaluaciones", "irEvaluaciones");
+					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Documentacion", "irDocumentacion");
 				}
 				enlace.click();
 			}
 
-			if (enlace == PageEscritorio.REEMPLAZAR_RESPONSABLE) {
+			if (enlace == PageEscritorio.PUBLICACIONES_PENDIENTES) {
 				Espera.espera(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
-					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Reemplazar Responsables",
-							"irReemplazarResponsables");
+					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Publicaciones Pendientes",
+							"irConsultaRiesgos");
 				}
 				enlace.click();
 			}

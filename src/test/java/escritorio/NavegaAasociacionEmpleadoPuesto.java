@@ -1,19 +1,17 @@
 package escritorio;
 
 
-
 import org.openqa.selenium.WebElement;
-
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Step;
 import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
 import utiles.esperas.Espera;
 
-public class RutaParaIrPublicacionesPendientes extends UIInteractionSteps {
+public class NavegaAasociacionEmpleadoPuesto extends UIInteractionSteps {
 
 	Espera espera = new Espera();
 
-	@Step("El usuario accede a la Pantalla Publicaciones Pendientes")
+	@Step("El usuario accede a la pantalla Asociacion Empleado Puesto")
 	public void accede() {
 		PageEscritorio.cargarLosEnlaces();
 
@@ -21,7 +19,7 @@ public class RutaParaIrPublicacionesPendientes extends UIInteractionSteps {
 
 			if (enlace == PageEscritorio.MENU) {
 				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
 				enlace.click();
@@ -29,22 +27,23 @@ public class RutaParaIrPublicacionesPendientes extends UIInteractionSteps {
 
 			if (enlace == PageEscritorio.DOCUMENTACION) {
 				Espera.espera(2000);
-				if ( AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
-					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Documentacion", "irDocumentacion");
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
+					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona documentacion", "irDocumentacion");
 				}
 				enlace.click();
 			}
 
-			if (enlace == PageEscritorio.PUBLICACIONES_PENDIENTES) {
+			if (enlace == PageEscritorio.ASOCIACION_EMPLEADO_PUESTO) {
 				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
-					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Publicaciones Pendientes",
-							"irConsultaRiesgos");
+				if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
+					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Asociacion Empleado Puesto",
+							"irAsociacionEmpleadoPuesto");
 				}
 				enlace.click();
+				Espera.espera(6000);
 			}
 
-		
+			
 		}
 	}
 }

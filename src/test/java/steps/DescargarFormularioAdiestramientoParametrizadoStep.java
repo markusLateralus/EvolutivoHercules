@@ -13,7 +13,7 @@ import menu.Documentacion.AsociacionEmpleadoPuesto.RutaParaIrBandejaDeSalida;
 import menu.Documentacion.BandejaDeSalida.RealizaDescarga;
 import modelo.ConsultaEmpleadoPuesto;
 import modelo.Trabajador;
-import escritorio.RutaParaIrAsociacionEmpleadoPuesto;
+import escritorio.NavegaAasociacionEmpleadoPuesto;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -41,7 +41,7 @@ public class DescargarFormularioAdiestramientoParametrizadoStep {
 	@Steps
 	Logarse logarse;
 	@Steps
-	RutaParaIrAsociacionEmpleadoPuesto rutaParaIrAsociacionEmpleadoPuesto;
+	NavegaAasociacionEmpleadoPuesto rutaParaIrAsociacionEmpleadoPuesto;
 	@Steps
 	RealizaBusqueda realizaBusqueda;
 	@Steps

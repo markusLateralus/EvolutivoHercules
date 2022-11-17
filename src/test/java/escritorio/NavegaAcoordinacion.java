@@ -9,7 +9,7 @@ import net.thucydides.core.annotations.Step;
 import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
 import utiles.esperas.Espera;
 
-public class RutaParaIrAcoordinacion extends UIInteractionSteps {
+public class NavegaAcoordinacion extends UIInteractionSteps {
 
 	Espera espera = new Espera();
 

@@ -9,11 +9,11 @@ import net.thucydides.core.annotations.Step;
 import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
 import utiles.esperas.Espera;
 
-public class RutaParaIrEditarFichas extends UIInteractionSteps {
+public class NavegaAconsultaRiesgos extends UIInteractionSteps {
 
 	Espera espera = new Espera();
 
-	@Step("El usuario accede a la Pantalla Editar Fichas")
+	@Step("El usuario accede a la Pantalla Consulta Riesgos")
 	public void accede() {
 		PageEscritorio.cargarLosEnlaces();
 
@@ -27,19 +27,19 @@ public class RutaParaIrEditarFichas extends UIInteractionSteps {
 				enlace.click();
 			}
 
-			if (enlace == PageEscritorio.FICHAS) {
+			if (enlace == PageEscritorio.RIESGOS) {
 				Espera.espera(2000);
 				if ( AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
-					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Fichas", "irFichas");
+					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Riesgos", "irRiesgo");
 				}
 				enlace.click();
 			}
 
-			if (enlace == PageEscritorio.EDITAR_FICHAS) {
+			if (enlace == PageEscritorio.CONSULTA_RIESGOS) {
 				Espera.espera(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
-					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Editar Fichas",
-							"irEditarFichas");
+					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Consulta Riesgos",
+							"irConsultaRiesgos");
 				}
 				enlace.click();
 			}

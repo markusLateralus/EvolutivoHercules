@@ -8,7 +8,7 @@ import menu.Documentacion.CoordinacionCliente.CoordinacionAcciones.RealizaLaDesc
 import java.util.Collection;
 
 import escritorio.PageEscritorio;
-import escritorio.RutaParaIrAcoordinacion;
+import escritorio.NavegaAcoordinacion;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -37,7 +37,7 @@ public class DescargarCoordinacionStep {
 	@Steps
      Logarse logarse;
 	@Steps
-	RutaParaIrAcoordinacion rutaParaIrAcoordinacion;
+	NavegaAcoordinacion rutaParaIrAcoordinacion;
 	@Steps
 	RealizaBusqueda realizaBusqueda;
 	@Steps

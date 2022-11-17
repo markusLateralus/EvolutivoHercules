@@ -3,7 +3,7 @@ package steps;
 import java.util.Collection;
 import java.util.List;
 
-import escritorio.RutaParaIrAdministracionUsuarios;
+import escritorio.NavegaAadministracionUsuarios;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -35,7 +35,7 @@ public class ModificacionPerfilTecnicoDeZonaStep {
 	Logarse logarse;
 	
 	@Steps
-	RutaParaIrAdministracionUsuarios rutaParaIrAdministracionUsuarios;
+	NavegaAadministracionUsuarios rutaParaIrAdministracionUsuarios;
 	@Steps
 	ModificaRoles modificaRoles;
 	
