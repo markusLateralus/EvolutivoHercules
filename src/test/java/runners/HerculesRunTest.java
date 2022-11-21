@@ -9,7 +9,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(plugin = { "pretty","html:target/selenium-reports" }, monochrome = true, //salida de consola más legible
+@CucumberOptions(plugin = { "pretty"}, monochrome = true, //salida de consola más legible
 		features="src/test/resources/features/login/login.feature",//0
 		// features="src/test/resources/features/Consulta_Documentos/DescargarConsultaDocumentos.feature",//1
 		// features="src/test/resources/features/Coordinacion/DescargarCoordinacion.feature",//2 
