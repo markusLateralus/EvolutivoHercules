@@ -5,53 +5,30 @@ import utiles.componentesDelPdf.Descripcion;
 import utiles.componentesDelPdf.Sprint;
 import utiles.componentesDelPdf.TituloPortada;
 import utiles.crearPdf.*;
-
 import static org.junit.Assert.assertTrue;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
-
 import modelo.Usuario;
-import org.apache.commons.io.FileUtils;
 import org.junit.runners.ParentRunner;
-import org.junit.runners.model.InitializationError;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
 import escritorio.VerificarNombreUsuario;
 import escritorio.VerificarRol;
-import io.cucumber.core.options.CucumberOptionsAnnotationParser;
-import io.cucumber.core.options.CucumberOptionsAnnotationParser.CucumberOptions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.junit.Cucumber;
+
 import login.Logarse;
 import login.Navega;
-import net.serenitybdd.core.Serenity;
-import net.serenitybdd.core.tags.EnvironmentDefinedTags;
-import net.serenitybdd.cucumber.CucumberWithSerenity;
-import net.serenitybdd.junit.runners.FailureRerunner;
-import net.thucydides.core.annotations.Feature;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.model.TestTag;
-import net.thucydides.core.model.TestTag.TestTagBuilder;
-import net.thucydides.core.model.TestTags;
-import net.thucydides.core.model.features.ApplicationFeature;
-import net.thucydides.core.requirements.reports.ScenarioOutcome;
-import net.thucydides.core.requirements.reports.ScenarioSummaryOutcome;
-import net.thucydides.core.tags.OutcomeTagFilter;
 
 
 public class LoginStep {
@@ -91,7 +68,7 @@ public class LoginStep {
 
 	@Given("el usuario ingresa en la aplicacion Hercules")
 	public void el_usuario_ingresa_en_la_aplicacion_hercules() {
-		//navega.aLogin();
+		navega.aLogin();
 	}
 	@Given("escribe el nombre y escribe el password")
 	public void escribe_el_nombre_y_escribe_el_password(DataTable dataTable) {

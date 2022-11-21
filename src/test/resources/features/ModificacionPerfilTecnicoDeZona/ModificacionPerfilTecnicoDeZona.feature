@@ -44,57 +44,90 @@ Escenario asociacion empleado puesto: En la asociación del empleado al puesto, 
  de los clientes asignados, no siendo posible realizar búsquedas a través de la opción Centro.
 Background:
 Given el usuario se logea como Tecnico de Central
-| usuario       | password   |   rol                |    
-| prl1     | Primera08  | Tecnico de Zona   |
+| usuario       | password   |   rol             |    
+| prl1          | Primera08   | Tecnico de Zona   |
 
 @ConsultaDeEvaluaciones
 Scenario Outline: Consulta de Evaluaciones
 When el usuario se dirige a la pantalla Consulta de Evaluaciones
-Then asdfasd
+And  el usario realiza una busqueda con el cliente "<cliente>" en la pantalla Consulta de Evaluaciones 
+Then el usuario puede verificar que la aplicacion realiza la busqueda correctamente
+Examples:
+|   cliente  |
+| 012363     |   #ayuntamiento de avila
 
 @AltaDeEvaluaciones
 Scenario Outline: Alta de Evaluaciones
 When el usuario se dirige a la pantalla Alta de Evaluaciones
-Then asdfasd
-
+And el usario realiza una busqueda con el cliente "<cliente>" en la pantalla Alta de Evaluaciones
+And rellenamos el formulario campo provincia "<provincia>", modelo de negocio "<modeloNegocio>", empresa "<empresa>" , linea de venta "<lineaVenta>", lugar prestacion servicio "<lugarPrestacionServicio>", actividad contratada "<actividadContratada>", tecnico "<tecnico>", responsable de contrato "<responsableContrato>", responsable control periodico "<responsableControlPeriodico>" y fecha inicio contrato "<fechaInicioContrato>"
+And el usuario selecciona un proyecto y lo Guarda
+Then el usuario obtiene un idEvaluacion nuevo
+Examples:
+|   cliente | provincia  | modeloNegocio   | empresa   |  lineaVenta |  lugarPrestacionServicio  | actividadContratada  |  tecnico   |  responsableContrato      | responsableControlPeriodico  |  fechaInicioContrato | 
+| 012363    |  05 - Avila|   910-Limpieza  |  25       |   01        |        AVILA              |     Prueba           |    prl1    | Fernandez Casado, Ainhoa  |   Fernandez Casado, Ainhoa   |      21/11/2022      |
 
 @ReemplazarResponasable
 Scenario Outline: Reemplazar Responasbles
 When el usuario se dirige a la pantalla Reemplazar Responsables
-And el usuario cambia el responsable "<responsableViejo>" por el responsable "<responsableNuevo>"
-Then el usuario puede comprobar que se ha realizado el cambio de responsable correctamente
-
+And el usuario cambia el responsable "<responsableViejo>"
+And el usuario selecciona una evaluacion con id "<id>"
+And el usuario elige  el responsable nuevo "<responsableNuevo>"
+And el usuario se dirige a la pantalla Consulta Evaluacion
+Then el usuario realiza la busqueda por id "<id>"
+And  el responsable es "responsableNuevo"
 Examples:
-| responsableViejo            |       responsableNuevo          |
-|   un usuario existente      | un nuevo cliente                |
+| responsableViejo               |   id       |     responsableNuevo          |   
+|   Fernandez Casado, Ainhoa     |   E-60428  |  Guerra Lopez, Lucas Armando     |    
 
 @EditarFicha
 Scenario Outline: Editar Ficha
 When el usuario se dirige a la pantalla de Editar Ficha
-And el usuario realiza la busqueda por dddddddddddddd
-Then el usuario comprueba que no está en la lista
+And el usuario realiza la busqueda por cliente "<cliente>" en la pantalla Editar Ficha
+And el usuario selecciona la primera ficha del cliente seleccionado
+And se carga la pantalla Edicion Ficha         #perdinente de termiar
+Examples:
+|  cliente     |
+|   012363     |
 
 @ConsultaDeRiesgo
 Scenario Outline: Consulta de Riesgo
 When el usuario se dirige a la pantalla Consulta de Riesgo
-And el usuario realiza la busqueda por dddddddddddddd
+And el usuario realiza la busqueda por cliente "<cliente>" en la pantalla Consulta de Riesgo
+Then el usuario comprueba que los riesgos son todos con el mismo cliente
+Examples:
+|   cliente  |
+| 012363     |
 
 @ConsultaDeDocumentos
 Scenario Outline: Consulta de Documentos
 When el usuario se dirige a la pantalla Consulta de Documentos
-And el usuario realiza la busqueda por dddddddddddddd
+And el usuario realiza la busqueda por cliente "<cliente>" en la pantalla Consulta de Documentos     #pendiente terminar
+Then el usuario comprueba que hay consultas con ese cliente asociado
+Examples:
+|   cliente      |
+|  Guadalajara   |
 
 @Coordinacion
 Scenario Outline: Coordinacion
 When el usuario se dirige a la pantalla Coordinacion
-And el usuario realiza la busqueda por dddddddddddddd
-
+And el usuario realiza la busqueda por cliente "<cliente>" en la pantalla Coordinacion
+And el usuario selecciona una coordinacion con ese cliente asociado
+And la aplicacion carga la pantalla Coordinacion Acciones
+And el usuario pulsa acciones y editar
+And el usuario rellena un cuestionario
+And el usuario genera nuevo CP y RAP
+Then el usuario guarda los cambios
+And el estado cambia a publicado
+Examples:
+|   cliente      |
+|  Guadalajara   |
 @PublicacionesPendientes
-Scenario Outline: Publicaciones Pendientes
+Scenario: Publicaciones Pendientes
 When el usuario se dirige a la pantalla Publicaciones Pendientes
-And el usuario realiza la busqueda por dddddddddddddd
+Then el usuario verifica que la tabla con resultados son todos con el mismo usuario
 
 @AsociacionEmpleadoPuesto
 Scenario Outline: Asociacion Empleado Puesto
-When el usuario se dirige a la pantalla Asociacion Empleado Puesto
+When el usuario se dirige a la pantalla Asociacion Empleado Puesto    #pendiente de terminar
 And el usuario realiza la busqueda por dddddddddddddd

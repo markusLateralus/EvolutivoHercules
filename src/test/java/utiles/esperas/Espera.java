@@ -1,6 +1,7 @@
 package utiles.esperas;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -11,10 +12,10 @@ import net.serenitybdd.core.steps.UIInteractionSteps;
 
 public class Espera extends UIInteractionSteps {
 
-	public  void implicitamente(int tiempo) {
-		 this.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(tiempo));
-		 }
-	
+	public void implicitamente(int tiempo) {
+		this.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(tiempo));
+	}
+
 	public static void espera(long tiempo) {
 		try {
 			Thread.sleep(tiempo);
@@ -23,32 +24,37 @@ public class Espera extends UIInteractionSteps {
 			e.printStackTrace();
 		}
 	}
-	//presente, visible y habilitado
+
+	// presente, visible y habilitado
 	public void queSeaclicable(Duration tiempo, WebElement element) {
-		WebDriverWait wait = new WebDriverWait(getDriver(),tiempo);
+		WebDriverWait wait = new WebDriverWait(getDriver(), tiempo);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 
-		}
-	//presente, visible, hablilitado y NO estar oculto por otro elemento
-	public void queSeaVisible(Duration tiempo,WebElement element) {
-		WebDriverWait wait = new WebDriverWait(getDriver(),tiempo);
+	}
+
+	// presente, visible, hablilitado y NO estar oculto por otro elemento
+	public void queSeaVisible(Duration tiempo, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), tiempo);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-	
-	public void queSeaSeleccionado(Duration tiempo,WebElement element) {
-		WebDriverWait wait = new WebDriverWait(getDriver(),tiempo);
+
+	public void queSeaSeleccionado(Duration tiempo, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), tiempo);
 		wait.until(ExpectedConditions.elementToBeSelected(element));
 	}
-	
-	  public void dobleClick(WebElement webElement) {
-			Actions action;
-			try {
-				action = new Actions(getDriver());
-				action.doubleClick(webElement).perform();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		    }
+
+	public void dobleClick(WebElement webElement) {
+		Actions action;
+		try {
+			action = new Actions(getDriver());
+			action.doubleClick(webElement).perform();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	public void hastaQueLaPaginaCargue(long tiempo) {
+	getDriver().manage().timeouts().pageLoadTimeout(tiempo, TimeUnit.SECONDS);
+	}
 }
