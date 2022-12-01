@@ -18,30 +18,28 @@ public class PdfLogin extends FactoryMethodPdf {
 	public static final String Ruta_Raiz = "./documentos/login/";
 	public static String Ruta_Escenario="";
 	public static String Ruta_Final="";
-	static boolean Creada_Ruta_Generica_Login =true;
+	static boolean Creada_Ruta_Generica_Login =false;
 	static String Ruta_Plantilla = "./documentos/login/plantilla.pdf";
 	
 	//esta funcion solo debe ejecutarse la primera vez que se llama en FactoriaPDF
 	public static boolean crearArchvivo(String rutaEscenario) {
-	       System.out.println("crear ruta "  + Ruta_Raiz+rutaEscenario+"/"+rutaEscenario+1+".pdf" );
-	
+	    //   System.out.println("crear ruta "  + Ruta_Raiz+rutaEscenario+"/"+rutaEscenario+1+".pdf" );
 		 Creada_Ruta_Generica_Login = CreadorPdf.crearArchivo(Ruta_Raiz+rutaEscenario+"/"+rutaEscenario+ 1 + ".pdf");
-	       System.out.println("HA SIDO CREADA? " + Creada_Ruta_Generica_Login);
 		 return Creada_Ruta_Generica_Login;
 	}
 	
-	public static void crearPdf(int vueltaEjecucion, String rutaEscenario, TituloPortada tituloPortada, Descripcion descripcion, Sprint sprint) {
-		Ruta_Escenario=rutaEscenario;
+	public static void crearPdf(int vueltaEjecucion, String nombreEscenario, TituloPortada tituloPortada, Descripcion descripcion, Sprint sprint) {
+		Ruta_Escenario=nombreEscenario;
 		Ruta_Final=Ruta_Raiz+Ruta_Escenario+"/"; //creamos la ruta para el escenario
-		Ruta_Archivo=Ruta_Final+ rutaEscenario;//creamos la ruta para el archvivo
+		Ruta_Archivo=Ruta_Final+ nombreEscenario;//creamos la ruta para el archvivo
 		CreadorPdf.IMAGENES_PARA_PDF = CapturaPantalla.ImagenesPNG;
-		Creada_Ruta_Generica_Login=true;
+		//Creada_Ruta_Generica_Login=true;
 		if (Creada_Ruta_Generica_Login) {
 			if (vueltaEjecucion == 1) {
 				System.out.println("vuelta 1 " + Ruta_Archivo);
 				CreadorPdf.escribePlantilla(Ruta_Plantilla, tituloPortada, descripcion,sprint);
 				CreadorPdf.escribeDocumento(Ruta_Archivo + vueltaEjecucion + ".pdf",
-						CreadorPdf.IMAGENES_PARA_PDF, Usuario.USUARIOS[vueltaEjecucion - 1]);
+						CreadorPdf.IMAGENES_PARA_PDF, Usuario.USUARIOS[vueltaEjecucion-1]);
 
 			} else {
 				System.out.println("vuelta 2 " + Ruta_Archivo);
@@ -49,7 +47,7 @@ public class PdfLogin extends FactoryMethodPdf {
 						Usuario.USUARIOS[vueltaEjecucion - 1]);
 				if (vueltaEjecucion == 4) {
 			
-					 String rutasArchivos[] = { "./documentos/login/plantilla.pdf", 
+					 String rutasArchivos[] = {Ruta_Plantilla, 
 							 Ruta_Archivo+"1.pdf",
 							 Ruta_Archivo+"2.pdf",
 							 Ruta_Archivo+"3.pdf", 

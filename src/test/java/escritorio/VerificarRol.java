@@ -16,7 +16,7 @@ public class VerificarRol extends UIInteractionSteps{
 		String todo= PageEscritorio.contenedorNombreCompleto.getText();
 		String[] lista=todo.split("•");
 		String rol2=lista[1];
-       Espera.espera(2);
+       Espera.obligatoriamente(2);
        AlmacenRutasDeCapturaPantalla.guardarRuta("Accedemos correctamente a la aplicación" ,"pantallaInicio");
 		return rol2;
 	}

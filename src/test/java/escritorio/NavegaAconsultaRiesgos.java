@@ -20,7 +20,7 @@ public class NavegaAconsultaRiesgos extends UIInteractionSteps {
 		for (WebElement enlace : PageEscritorio.ENLACES) {
 
 			if (enlace == PageEscritorio.MENU) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
@@ -28,7 +28,7 @@ public class NavegaAconsultaRiesgos extends UIInteractionSteps {
 			}
 
 			if (enlace == PageEscritorio.RIESGOS) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if ( AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Riesgos", "irRiesgo");
 				}
@@ -36,7 +36,7 @@ public class NavegaAconsultaRiesgos extends UIInteractionSteps {
 			}
 
 			if (enlace == PageEscritorio.CONSULTA_RIESGOS) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Consulta Riesgos",
 							"irConsultaRiesgos");

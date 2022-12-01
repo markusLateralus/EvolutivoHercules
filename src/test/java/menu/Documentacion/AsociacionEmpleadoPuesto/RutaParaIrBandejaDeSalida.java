@@ -21,7 +21,7 @@ public class RutaParaIrBandejaDeSalida extends UIInteractionSteps {
 		for (WebElement enlace : PageEscritorio.ENLACES) {
 
 			if (enlace == PageEscritorio.MENU) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2
 						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 3
 						|| AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 4
@@ -32,7 +32,7 @@ public class RutaParaIrBandejaDeSalida extends UIInteractionSteps {
 			}
 
 			if (enlace == PageEscritorio.BANDEJA_DE_SALIDA) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Bandeja De Salida",
 							"irBandejaDeSalida");

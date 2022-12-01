@@ -14,4 +14,9 @@ public class PageEdicionEvaluacion extends PageObject{
 //	@FindBy(xpath="(//span[normalize-space()='32166'])[1]")
 	static WebElement PRIMER_VALOR_TABLA_PESTANIA_PUESTOS=PageConsultaEvaluacion.PRIMER_VALOR_TABLA_PESTANIA_PUESTOS; //la primera celda de la tabla de puestos
 	
+	//////////////////////////////////////////////////////////////////////////////
+	@FindBy(css="#clienteId")
+	static WebElement CAMPO_ID_CLIENTE;
+	
+	
 }

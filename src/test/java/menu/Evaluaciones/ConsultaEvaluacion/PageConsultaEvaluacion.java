@@ -11,6 +11,8 @@ public class PageConsultaEvaluacion extends PageObject{
 	static WebElement CAMPO_EMPRESA;
 	@FindBy(xpath="(//div[@class=\"ng-input\"])[3]/descendant::input")
 	static WebElement CAMPO_MODELONEGOCIO;
+	
+	
 	@FindBy(id="mat-checkbox-1") WebElement MAT;//de aqui se coge despues el checkbox
 	@FindBy(xpath="(//button[@class=\"mat-focus-indicator mat-button mat-raised-button mat-button-base mat-primary\"])[4]")	
 	static WebElement BOTON_BUSCAR;
@@ -37,5 +39,17 @@ public class PageConsultaEvaluacion extends PageObject{
 	public static WebElement pestaniaIGCT;
 	@FindBy(xpath="(//span[@class='material-icons search-button ng-star-inserted'][normalize-space()='download'])[1]")
 	public static WebElement botonDESCARGAR_IGCT;
+	
+	@FindBy(id="idEvaluacion")
+	public static WebElement CAMPO_ID;
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	@FindBy(css=".form-control.ng-untouched.ng-pristine.ng-invalid")
+	static WebElement CAMPO_IDeVALUACION;
+	@FindBy(xpath="(//span[normalize-space()='5055'])[1]")
+	static WebElement RESULTADO_BUSQUEDA_POR_ID;
+	
+	//////////////////////////////////////////////////////////////////////////////
+	@FindBy(xpath="(//span[normalize-space()='Jaime Mansilla'])[1]")
+	static WebElement CAMPO_RESPONSABLE_CONTROL_PERIODICO;
 }

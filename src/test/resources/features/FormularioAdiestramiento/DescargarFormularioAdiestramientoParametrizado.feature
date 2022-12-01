@@ -6,7 +6,7 @@ Feature: Rellenar Formulario Adiestramiento Parametrizado
 Background:
  Given el usuario logado correctamente en Hercules 
 | usuario   | password   |
-| maarrones | Primera08  |
+| maarrones | Primera09  |
 | prl1      | Primera08  |
 | prl2      | Primera08  |   
 | prl3      | Primera08  |
@@ -33,7 +33,7 @@ Background:
 
     Examples: 
 | usuario   | password   | evaluacion|    lote                       |     dni       |      puesto  |  nombreTrabajador       | 
-| maarrones | Primera08  |    4096   |     Tecnico Central           |  35579678N    |     6364     | MIGUEL CADENAS AMANDI   |
+| maarrones | Primera09  |    4096   |     Tecnico Central           |  35579678N    |     6364     | MIGUEL CADENAS AMANDI   |
 | prl1      | Primera08  |    4096   |     Tecnico Zona              |  35579678N    |     6364     | MIGUEL CADENAS AMANDI   |
 | prl2      | Primera08  |   4096    |    Responsable                |  35579678N    |     6364     | MIGUEL CADENAS AMANDI   |
 | prl3      | Primera08  |   4096    |   Responsable Impresion       |  35579678N    |     6364     | MIGUEL CADENAS AMANDI   |

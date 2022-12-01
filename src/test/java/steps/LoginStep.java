@@ -35,11 +35,20 @@ public class LoginStep {
 	
 	private static int CONTADOR=1;
 	private String rutaEscenario="";
+	
+	
 	@Steps 
 	Navega navega;
 	
 	@Steps
 	Logarse logarse;
+	
+	
+	
+	
+	
+	
+	
 	
 	@Steps
 	VerificarNombreUsuario verificarNombreUsuario;
@@ -52,14 +61,14 @@ public class LoginStep {
 
 	@Before()//"@loginCorrecto or @loginIncorrecto"
 	public void antes(Scenario scenario) {
-		AlmacenRutasDeCapturaPantalla.setValorRuta(5);
+		AlmacenRutasDeCapturaPantalla.setValorRuta(7);
 		
 		//reiniciamos los contadores
 		if(CONTADOR==5)CONTADOR=1;
 		if(	CapturaPantalla.CONTADOR_VUELTAS_APLICACION==5)CapturaPantalla.CONTADOR_VUELTAS_APLICACION=1;
 		Collection<String> etiquetas=scenario.getSourceTagNames();
-		for(String esc: etiquetas) {
-			rutaEscenario=esc;	
+		for(String etiqueta: etiquetas) {
+			rutaEscenario=etiqueta;	 //@loginIncorrecto
 		}
 		//AlmacenRutasDeCapturaPantalla.Ruta_Escenario=rutaEscenario;
 		System.out.println("dentro before loginStep " + CapturaPantalla.CONTADOR_VUELTAS_APLICACION);
@@ -72,10 +81,11 @@ public class LoginStep {
 	}
 	@Given("escribe el nombre y escribe el password")
 	public void escribe_el_nombre_y_escribe_el_password(DataTable dataTable) {
-	/*	List<List<String>> rows = dataTable.asLists(String.class);
+		/*List<List<String>> rows = dataTable.asLists(String.class);
 			for (List<String> row : rows) {
 				Usuario.agregar(new Usuario(row.get(0), row.get(1), row.get(2)));
 			}
+		
 			
 		logarse.rellenarUsuario(Usuario.usuarios.get(CONTADOR).nombre);
 		logarse.rellenarPassword(Usuario.usuarios.get(CONTADOR).password);
@@ -110,7 +120,7 @@ public class LoginStep {
 @After()//"@loginCorrecto or @loginIncorrecto"
 public void guardar(Scenario escenario) {
 	//FactoriaPDF.crearPdf(AlmacenRutasDeCapturaPantalla.VALOR_RUTA,	CapturaPantalla.CONTADOR_VUELTAS_APLICACION,rutaEscenario,TituloPortada.TITULO_LOGIN,
-			//Descripcion.DESCRIPCION_LOGIN,Sprint.Sprint1 );
+		//	Descripcion.DESCRIPCION_LOGIN,Sprint.Sprint1 );
 	CapturaPantalla.CONTADOR_VUELTAS_APLICACION++;
 	CONTADOR++;
 	//reseteamos las rutas

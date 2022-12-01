@@ -13,7 +13,7 @@ Then se descarga la documentacion de consultas
 
 Examples:
 | usuario   | password   |     rol                  |   cliente   | 
-| maarrones | Primera08  | Tecnico de central       |  097810     |
+| maarrones | Primera09  | Tecnico de central       |  097810     |
 | prl1      | Primera08  | Tecnico de zona          |  097810     |
 | prl2      | Primera08  | Generico Responsable     |  097810     |
 | prl3      | Primera08  | Responsable de impresion |  097810     |

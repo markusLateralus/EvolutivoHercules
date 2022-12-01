@@ -27,9 +27,9 @@ public class PageEscritorio extends PageObject{
 	
 	
 	
-	@FindBy(xpath="(//div[normalize-space()='Documentación'])[1]")
+	@FindBy(css="body > app-root:nth-child(1) > app-hercules3-sidebar:nth-child(1) > div:nth-child(1) > mat-sidenav-container:nth-child(1) > mat-sidenav:nth-child(3) > div:nth-child(1) > app-hercules3-menu:nth-child(2) > mat-tree:nth-child(1) > mat-tree-node:nth-child(5) > div:nth-child(2)")
 	public static WebElement DOCUMENTACION;
-	@FindBy(xpath="(//div[normalize-space()='Coordinación Cliente'])[1]")
+	@FindBy(css="body > app-root:nth-child(1) > app-hercules3-sidebar:nth-child(1) > div:nth-child(1) > mat-sidenav-container:nth-child(1) > mat-sidenav:nth-child(3) > div:nth-child(1) > app-hercules3-menu:nth-child(2) > app-hercules3-menu-nivel-uno:nth-child(1) > mat-tree:nth-child(3) > mat-tree-node:nth-child(1) > div:nth-child(2)")
 	public static WebElement COORDINACION_CLIENTE;
 	 @FindBy(xpath="(//div[normalize-space()='Consulta Documentos'])[1]")
 	public static WebElement CONSULTA_DOCUMENTOS;

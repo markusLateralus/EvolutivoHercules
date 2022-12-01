@@ -7,7 +7,7 @@ Background:
 Given el usuario entra en Hercules 
 And el usuario se logea correctamente 
 | usuario   | password   |     rol                   | 
-| maarrones | Primera08  | Tecnico de central        |
+| maarrones | Primera09  | Tecnico de central        |
 | prl1      | Primera08  | Tecnico de zona           |
 | prl2      | Primera08  | Generico Responsable      |
 | prl3      | Primera08  | Responsable de impresion  |
@@ -53,7 +53,7 @@ Then el usuario se descarga la documentacion Ins.Guias Cliente Proyecto correcta
 Examples:
 
 | usuario   | password   |     rol                   | provincia       |      empresa        |       modeloNegocio          | 
-| maarrones | Primera08  | Tecnico de central        |  33             | 25 - EULEN, S. A.   | 960 - Servicios Auxiliares   |
+| maarrones | Primera09  | Tecnico de central        |  33             | 25 - EULEN, S. A.   | 960 - Servicios Auxiliares   |
 | prl1      | Primera08  | Tecnico de zona           |  33             | 25 - EULEN, S. A.   | 960 - Servicios Auxiliares   | 
 | prl2      | Primera08  | Generico Responsable      |  33             | 25 - EULEN, S. A.   | 960 - Servicios Auxiliares   | 
 | prl3      | Primera08  | Responsable de impresion  |  33             | 25 - EULEN, S. A.   | 960 - Servicios Auxiliares   |

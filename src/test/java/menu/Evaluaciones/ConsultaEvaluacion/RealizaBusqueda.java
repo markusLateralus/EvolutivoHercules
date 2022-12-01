@@ -17,7 +17,7 @@ public class RealizaBusqueda extends UIInteractionSteps {
 	private PageConsultaEvaluacion pageConsultaEvaluacion;
 	private Espera espera=new Espera();
 	
-	@Step("El usuario rellena el campo provincia {provincia}, campo empresa {empresa}, campo modelo de negocio {modeloNegocio} y realiza la busqueda")
+	@Step("El usuario rellena el formulario y realiza la busqueda")
 	public void rellenaFormulario(String provincia, String empresa, String modeloNegocio) {
 		this.rellenarCampoProvincia(provincia);
 		this.rellenarCampoEmpresa(empresa);
@@ -26,22 +26,22 @@ public class RealizaBusqueda extends UIInteractionSteps {
 		this.pulsarEnBuscar();
 	}
 	
-	 @Step("El usuario rellena el campo provincia {provincia}")
+	 @Step("El usuario rellena el campo provincia con la provincia de {0}")
 	    private void rellenarCampoProvincia(String provincia) {
-		 espera.queSeaclicable(Duration.ofSeconds(15), PageConsultaEvaluacion.CAMPO_PROVINCIA);
+		 espera.queSeaClicable(Duration.ofSeconds(15), PageConsultaEvaluacion.CAMPO_PROVINCIA);
 	        PageConsultaEvaluacion.CAMPO_PROVINCIA.sendKeys(provincia);
-	        Espera.espera(1000);
+	        Espera.obligatoriamente(1000);
 	        PageConsultaEvaluacion.CAMPO_PROVINCIA.sendKeys(Keys.ENTER);
 	 }
 	 
-	 @Step("El usuario rellena el campo empresa {empresa}")
+	 @Step("El usuario rellena el campo empresa con la empresa {0}")
 	 private void rellenarCampoEmpresa(String empresa) {
-		 espera.queSeaclicable(Duration.ofSeconds(15), PageConsultaEvaluacion.CAMPO_EMPRESA);
+		 espera.queSeaClicable(Duration.ofSeconds(15), PageConsultaEvaluacion.CAMPO_EMPRESA);
 	        PageConsultaEvaluacion.CAMPO_EMPRESA.sendKeys(empresa + Keys.ENTER);
 	 }
-	 @Step("El usuario rellena el campo Modelos de Negocio {modeloNegocio}")
+	 @Step("El usuario rellena el campo Modelos de Negocio con {0}")
 	 private void rellenarCampoModeloNegocio(String modeloNegocio) {
-		 espera.queSeaclicable(Duration.ofSeconds(15), PageConsultaEvaluacion.CAMPO_MODELONEGOCIO);
+		 espera.queSeaClicable(Duration.ofSeconds(15), PageConsultaEvaluacion.CAMPO_MODELONEGOCIO);
 	        PageConsultaEvaluacion.CAMPO_MODELONEGOCIO.sendKeys(modeloNegocio + Keys.ENTER);
 	 }
 	 @Step("El usuario selecciona el checkbox TODOS")
@@ -55,8 +55,21 @@ public class RealizaBusqueda extends UIInteractionSteps {
 	 
 	 @Step("El usuario pulsa el boton buscar")
 	    private void pulsarEnBuscar() {
-		 Espera.espera(2000);
+		 Espera.obligatoriamente(2000);
 	        PageConsultaEvaluacion.BOTON_BUSCAR.click();
+	 }
+	 
+	 
+	 ///////////////////////////////////
+	 
+	 @Step("el usuario realiza la busqueda de cliente con el id {0} ")
+	 public void porId(String id) {
+	   if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+		   AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario realiza la busqueda del cliente","rellenaFormulario");
+	   }
+		 espera.queSeaClicable(Duration.ofSeconds(5), PageConsultaEvaluacion.CAMPO_IDeVALUACION);
+		 PageConsultaEvaluacion.CAMPO_IDeVALUACION.sendKeys(id);
+		 this.pulsarEnBuscar();
 	 }
 	 
 }

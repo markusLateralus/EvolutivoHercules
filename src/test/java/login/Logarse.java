@@ -2,12 +2,15 @@ package login;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Step;
 import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
 import utiles.esperas.Espera;
+
+
 
 
 public class Logarse extends UIInteractionSteps {
@@ -20,22 +23,23 @@ public class Logarse extends UIInteractionSteps {
 	    	this.rellenarUsuario(usuario);
 	    	this.rellenarPassword(password);
 		    this.pulsarBotonLogin();
-			Espera.espera(2000);
+			Espera.obligatoriamente(2000);
 	 }
+	 
 	 
 	    
 		// @Step("escribo el nombre en el campo Usuario {usuario}")
 	    public void rellenarUsuario(String usuario) {
-	    
-		    Espera.espera(1000);
-	   // 	espera.queSeaSeleccionado(Duration.ofSeconds(15),  PageLogin.campoUsuario);
+		 //   Espera.espera(500);
+	   	espera.queSeaClicable(Duration.ofSeconds(15),  PageLogin.campoUsuario);
 	        PageLogin.campoUsuario.sendKeys(usuario + Keys.ENTER);
 	        AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario rellena el campo usuario" ,"EscribirUsuario");
 	 }
 	 
 	// @Step("escribo la contrasenia en el campo password {pass}")
 	    public void rellenarPassword(String pass) {
-		 Espera.espera(1000);
+		// Espera.espera(500);
+	     	espera.queSeaClicable(Duration.ofSeconds(15),  PageLogin.campoPassword);
 	        PageLogin.campoPassword.sendKeys(pass + Keys.ENTER);
 	        AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario rellena el campo password", "EscribirPassword");	        
 	 }

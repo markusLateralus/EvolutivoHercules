@@ -38,7 +38,7 @@ public class DescargaIGCT extends UIInteractionSteps {
 		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==3 && escenario.equalsIgnoreCase("@igct")) {
 			 AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario se descarga la Ins Guias Cliente Proyecto", "descargarIGCT");
 		}
-		 Espera.espera(1000);
+		 Espera.obligatoriamente(1000);
 	 }
 	 
 	

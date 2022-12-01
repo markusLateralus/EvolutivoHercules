@@ -12,7 +12,8 @@ public enum Descripcion {
 	DESCRIPCION_DESCARGAR_IGN_Boton2("pasos para descargar las consultas sobre Ins. Guias Nacionales con el boton 2"),
 	DESCRIPCION_DESCARGAR_FORMULARIOADIESTRAMIENTO("Pasos para verificar el correcto funcionamiento de la descarga del formulario de adiestramiento y la implementación adecuada tanto del nombre del trabajador como de su dni"),
 	DESCRIPCION_DESCARGAR_FORMULARIOADIESTRAMIENTO_SIN_RESPUESTAS("Pasos para verificar que no contiene las respuestas el formulario de adiestramiento"),
-	ALTA_DE_USUARIO("Pasos para verificar que el se puede realizar altas y bajas en la asignacion de usuarios"),
+	ALTA_DE_USUARIO("Pasos para verificar que el se puede realizar altas en la asignacion de usuarios"),
+	BAJA_DE_USUARIO("Pasos para verificar que el se puede realizar bajas en la asignacion de usuarios"),
 	//////todas son para modifciacion perfil de tecnico de zona
 	CONSULTA_DE_EVALUACIONES_CON_TECNICO_DE_ZONA("En el proceso de Consulta de Evaluaciones, las búsquedas se realizarán sobre los clientes asignados al Técnico de Zona y sus ofertas, desapareciendo el parámetro Empresa / Oficina."),
 	ALTA_DE_EVALUACIONES_CON_TECNICO_DE_ZONA("El alta de evaluaciones sólo se permitirá sobre aquellos clientes que tenga asignado el Técnico de PRL, pudiéndose seleccionar únicamente como “Tipo” las opciones de “Cliente” y “Oferta”. La posibilidad de dar de alta evaluaciones de tipo “Centro” no estará habilitada"),
@@ -24,7 +25,7 @@ public enum Descripcion {
 			+ "Pantalla que facilita la gestión de los documentos aportados por el cliente y su consulta, tiene dos zonas diferenciadas, la superior donde se ponen los criterios de selección de la consulta de los documentos, y la inferior para gestión y visionado de los datos de los documentos hallados en la consulta.\r\n"
 			+ ""),
 	PUBLICACIONES_PENDIENTES_CON_TECNICO_DE_ZONA("En la pantalla de publicaciones pendientes, sólo se mostrarán aquellas relacionadas con las evaluaciones o fichas de los clientes asignados al Técnico de Zona, por lo que no se le mostrará la opción “Mostrar todos”."),
-	ASIGNACION_EMPLEADO_PUESTO_CON_TECNICO_DE_ZONA("En la asociación del empleado al puesto, el Técnico de Zona sólo podrá asociar empleados a las evaluaciones de los clientes asignados, no siendo posible realizar búsquedas a través de la opción Centro.");
+	ASOCIACION_EMPLEADO_PUESTO_CON_TECNICO_DE_ZONA("En la asociación del empleado al puesto, el Técnico de Zona sólo podrá asociar empleados a las evaluaciones de los clientes asignados, no siendo posible realizar búsquedas a través de la opción Centro.");
 ;
 
 private String descripcion;

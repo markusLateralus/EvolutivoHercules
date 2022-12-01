@@ -14,7 +14,7 @@ public class PdfModificacionPerfilTecnicoDeZona  extends FactoryMethodPdf {
 	public static String Ruta_Archivo="";
 	public static String Ruta_Escenario="";
 	public static String Ruta_Final="";
-	static String Ruta_Raiz = "./documentos/ModificacionPefilTecnicoDeZona/";
+	static String Ruta_Raiz = "./documentos/ModificacionPerfilTecnicoDeZona/";
 	static boolean Creada_Ruta_Raiz = false;
 	static String Ruta_Plantilla="";
 	
@@ -30,12 +30,12 @@ public class PdfModificacionPerfilTecnicoDeZona  extends FactoryMethodPdf {
 		Ruta_Final=Ruta_Raiz+Ruta_Escenario+"/"; //creamos la ruta para el escenario
 		Ruta_Archivo=Ruta_Final+ rutaEscenario;//creamos la ruta para el archvivo
 		Ruta_Plantilla=Ruta_Raiz+Ruta_Escenario+"/plantilla.pdf";
-	/*	System.out.println(" ruta escenario: " + Ruta_Escenario );
+		System.out.println(" ruta escenario: " + Ruta_Escenario );
 		System.out.println("ruta Raiz: " + Ruta_Raiz );
 		System.out.println("ruta Final " + Ruta_Final);
 		System.out.println("archivo: " +Ruta_Archivo);
 		System.out.println("ruta plantilla " + Ruta_Plantilla);
-		System.out.println("archivo: " +Ruta_Archivo);*/
+		System.out.println("archivo: " +Ruta_Archivo);
 		CreadorPdf.IMAGENES_PARA_PDF = CapturaPantalla.ImagenesPNG;
 		Creada_Ruta_Raiz=true;
 		if (Creada_Ruta_Raiz) {
@@ -43,7 +43,7 @@ public class PdfModificacionPerfilTecnicoDeZona  extends FactoryMethodPdf {
 			if (vueltaEjecucion == 1) {
 				System.out.println("TITULO "+ tituloPortada.getTitulo() ); 
 				CreadorPdf.escribePlantilla(Ruta_Plantilla, tituloPortada, descripcion, sprint);
-				CreadorPdf.escribeDocumento(Ruta_Archivo + vueltaEjecucion + ".pdf", CreadorPdf.IMAGENES_PARA_PDF, Usuario.USUARIOS[vueltaEjecucion-1]);
+				CreadorPdf.escribeDocumento(Ruta_Archivo + vueltaEjecucion + ".pdf", CreadorPdf.IMAGENES_PARA_PDF, Usuario.USUARIOS[vueltaEjecucion]);
 				fusionarPdfs(Ruta_Plantilla, Ruta_Archivo);
 			}
 			

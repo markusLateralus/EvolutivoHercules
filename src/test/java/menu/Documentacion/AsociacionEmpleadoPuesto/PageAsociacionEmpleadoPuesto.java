@@ -9,6 +9,8 @@ public class PageAsociacionEmpleadoPuesto extends PageObject{
 	static WebElement campoBuscador;
 	@FindBy(xpath="//span[normalize-space()='Buscar']")
 	static WebElement botonBUSCAR;
+	@FindBy(css="label[class='check-label col-form-label col-md-9 col-lg-9 col-xl-9']")
+	static WebElement ETIQUETA_RESULTADO_BUSQUEDA;
 	@FindBy(xpath="(//input[@title='Seleccione para generar documentación'])[1]")
 	static WebElement checkBoxDNI;
 	
@@ -20,6 +22,8 @@ public class PageAsociacionEmpleadoPuesto extends PageObject{
 	static WebElement campoNombreLote;
 	@FindBy(xpath="(//span[normalize-space()='Aceptar'])[1]")
 	public static WebElement botonAceptar;
+	
+	
 
 	
 }

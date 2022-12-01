@@ -13,23 +13,23 @@ public class RealizaBusqueda extends UIInteractionSteps {
 PageConsultaDocumentos consulta;
 	private Espera espera=new Espera();
 	
-	@Step("El usuario realiza una busqueda de cliente {cliente}")
+	@Step("El usuario busca el cliente {0}")
 	public void buscar(String cliente) {
 		this.rellenarCampoCliente(cliente);
 		this.pulsarEnBuscar();
 	}
-	 @Step("El usuario rellena el campo cliente {cliente}")
-	    public void rellenarCampoCliente(String cliente) {
+	 @Step("El usuario rellena el campo cliente con el nombre {0}")
+	    private void rellenarCampoCliente(String cliente) {
 		 espera.queSeaVisible(Duration.ofSeconds(15), PageConsultaDocumentos.CAMPO_CLIENTE);
 		 PageConsultaDocumentos.CAMPO_CLIENTE.sendKeys(cliente);
-		 Espera.espera(1500);
+		 Espera.obligatoriamente(3000);
 		 PageConsultaDocumentos.CAMPO_CLIENTE.sendKeys(Keys.ENTER);
 	 }
 	 
 	 @Step("El usuario pulsa el boton buscar")
-	    public void pulsarEnBuscar() {
-		 espera.queSeaclicable(Duration.ofSeconds(15), PageConsultaDocumentos.BOTON_BUSCAR);
-		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==1 ) {
+	    private void pulsarEnBuscar() {
+		 espera.queSeaClicable(Duration.ofSeconds(15), PageConsultaDocumentos.BOTON_BUSCAR);
+		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7) {
 			  AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario realiza la búsqueda del cliente", "realizarBusqueda");
 		}
 		 

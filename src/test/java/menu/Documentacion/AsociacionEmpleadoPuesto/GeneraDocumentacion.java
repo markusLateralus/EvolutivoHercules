@@ -27,7 +27,7 @@ public class GeneraDocumentacion extends UIInteractionSteps {
 	
 	@Step("El usuario selecciona un trabajador")
 	private void seleccionarTrabajador() {
-		espera.queSeaclicable(Duration.ofSeconds(10), PageAsociacionEmpleadoPuesto.checkBoxDNI);
+		espera.queSeaClicable(Duration.ofSeconds(10), PageAsociacionEmpleadoPuesto.checkBoxDNI);
 		PageAsociacionEmpleadoPuesto.checkBoxDNI.click();
 	}
 	

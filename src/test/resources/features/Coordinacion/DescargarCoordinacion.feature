@@ -13,7 +13,7 @@ Then el usuiario se descarga la documentacion de coordinacion
 
 Examples:
 | usuario   | password   |     rol                  |   cliente   | 
-| maarrones | Primera08  | Tecnico de central       |  097810     |
+| maarrones | Primera09  | Tecnico de central       |  097810     |
 | prl1      | Primera08  | Tecnico de zona          |  097810     |
 
 

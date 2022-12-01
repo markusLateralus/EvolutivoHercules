@@ -16,12 +16,12 @@ PageConsultaDocumentos consulta;
 	 @Step("El usuario se descarga la documentacion")
 	    public void descargar() {
 		 Actions action=new Actions(this.getDriver());
-		 espera.queSeaclicable(Duration.ofSeconds(15), PageConsultaDocumentos.RESULTADO_BUSQUEDA);
+		 espera.queSeaClicable(Duration.ofSeconds(15), PageConsultaDocumentos.RESULTADO_BUSQUEDA);
 			action.doubleClick(PageConsultaDocumentos.RESULTADO_BUSQUEDA).perform();	
-			 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==1 ) {
+			 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==1 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7 ) {
 				  AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario se descarga la documentación", "descargarDocumentacion");
 			}
-		 Espera.espera(5000);
+		 Espera.obligatoriamente(5000);
 		 
 	 }
 	 

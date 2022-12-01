@@ -18,29 +18,29 @@ public class NavegaAasociacionEmpleadoPuesto extends UIInteractionSteps {
 		for (WebElement enlace : PageEscritorio.ENLACES) {
 
 			if (enlace == PageEscritorio.MENU) {
-				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5) {
+				Espera.obligatoriamente(2000);
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
 				enlace.click();
 			}
 
 			if (enlace == PageEscritorio.DOCUMENTACION) {
-				Espera.espera(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
+				Espera.obligatoriamente(2000);
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona documentacion", "irDocumentacion");
 				}
 				enlace.click();
 			}
 
 			if (enlace == PageEscritorio.ASOCIACION_EMPLEADO_PUESTO) {
-				Espera.espera(2000);
-				if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5) {
+				Espera.obligatoriamente(2000);
+				if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==5 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Asociacion Empleado Puesto",
 							"irAsociacionEmpleadoPuesto");
 				}
 				enlace.click();
-				Espera.espera(6000);
+				Espera.obligatoriamente(6000);
 			}
 
 			

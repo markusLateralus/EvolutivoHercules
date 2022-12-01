@@ -13,11 +13,11 @@ public class NavegaAadministracionUsuarios extends UIInteractionSteps{
 	@Step("El usuario accede a la pantalla Instruccciones Guias")
 	public void accede() {
 		PageEscritorio.cargarLosEnlaces();
-		Espera.espera(2500);
+		Espera.obligatoriamente(2500);
 		for (WebElement enlace : PageEscritorio.ENLACES) {
 
 			if (enlace == PageEscritorio.MENU) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if ( AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
@@ -25,7 +25,7 @@ public class NavegaAadministracionUsuarios extends UIInteractionSteps{
 			}	
 			
 			if (enlace == PageEscritorio.HERRAMIENTAS) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Herramientas","irHerramientas");
 				
@@ -34,7 +34,7 @@ public class NavegaAadministracionUsuarios extends UIInteractionSteps{
 			}
 
 			if (enlace == PageEscritorio.ADMINISTRACION) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Administracion","irAdministracion");
 				
@@ -43,7 +43,7 @@ public class NavegaAadministracionUsuarios extends UIInteractionSteps{
 			}
 
 			if (enlace == PageEscritorio.SEGURIDAD) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Seguridad",
 							"irSeguridad");
@@ -51,7 +51,7 @@ public class NavegaAadministracionUsuarios extends UIInteractionSteps{
 				enlace.click();
 			}
 			if (enlace == PageEscritorio.USUARIOS) {
-			Espera.espera(2000);
+			Espera.obligatoriamente(2000);
 			if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 6) {
 				AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Usuarios",
 						"irUsuarios");

@@ -19,7 +19,6 @@ import login.Logarse;
 
 import net.thucydides.core.annotations.Steps;
 import utiles.capturasPantallas.AlmacenRutasDeCapturaPantalla;
-import utiles.capturasPantallas.CapturaPantalla;
 import utiles.componentesDelPdf.Descripcion;
 import utiles.componentesDelPdf.Sprint;
 import utiles.componentesDelPdf.TituloPortada;
@@ -34,7 +33,7 @@ public class DescargarInstruccionesGuiasStep {
 	@Steps
 	Logarse logarse;
 	@Steps
-	NavegaAinstrccionesGuias rutaParaIrInstruccionesGuias;
+	NavegaAinstrccionesGuias navegaAinstruccionesGuias;
 	@Steps
 	RealizaBusqueda realizaBusqueda;
 	@Steps
@@ -65,10 +64,10 @@ public class DescargarInstruccionesGuiasStep {
 	}
 	@Given("se dirige a la pantlla Instrucciones Guias")
 	public void se_dirige_a_la_pantlla_instrucciones_guias() {
-		rutaParaIrInstruccionesGuias.accede();
+		navegaAinstruccionesGuias.accede();
 	}
-	@When("el usuario realiza una busqueda por {string}")
-	public void el_usuario_realiza_una_busqueda_por(String busqueda) {
+	@When("el usuario realiza una busqueda por {int}")
+	public void el_usuario_realiza_una_busqueda_por(int busqueda) {
 		  realizaBusqueda.conElValor(busqueda);
 	}
 	@Then("se descarga la documentacion Instrucciones Guias")

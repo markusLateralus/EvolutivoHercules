@@ -19,37 +19,37 @@ public class RealizaDescarga extends UIInteractionSteps {
 	public void actualizarPagina() {
 		//Espera.espera(35000);
 		PageBandejaDeSalida.BOTON_REFRESCAR.click();
-		Espera.espera(3000);
+		Espera.obligatoriamente(3000);
 
 	}
 
-	@Step("El usuario se descarga el formuluario de adiestramiento con el lote{lote} y dni{dni}")
+	@Step("El usuario se descarga el formuluario de adiestramiento con el lote {0} y dni {1}")
 	public void delFormularioDeAdiestramiento(String lote, String dni,String puesto) {
 		this.desplegarPestanias(lote, dni,puesto);
-		Espera.espera(2000);
+		Espera.obligatoriamente(2000);
 		this.descargaFormularioAdiestramiento();
 	}
 
-	@Step("El usuario se descarga el formuluario de adiestramiento con el lote{lote}, dni{dni} y puesto{puesto} y el archivo CUR")
+	@Step("El usuario se descarga el formuluario de adiestramiento con el lote {0}, dni {1} y puesto {2} y el archivo CUR")
 	public void deLosFormulariosAdiestramientoYCUR(String lote, String dni, String puesto) {
 		this.desplegarPestanias(lote, dni, puesto);
-		Espera.espera(2000);
+		Espera.obligatoriamente(2000);
 		this.descargaFormularioAdiestramiento();
-		Espera.espera(2000);
+		Espera.obligatoriamente(2000);
 		this.descargaFormularioRespuesta();
 	}
 	@Step("El usuario despliega las pestania de la tabla")
 	private void desplegarPestanias(String lote, String dni, String puesto) {
 		this.desplegarPestaniaDeLaTabla(lote);
-		Espera.espera(2000);
+		Espera.obligatoriamente(2000);
 		this.desplegarPestaniaDeLaTabla(dni);
-		Espera.espera(4000);
+		Espera.obligatoriamente(4000);
 		this.desplegarPestaniaDeLaTabla(puesto);
 		if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5) {
 			AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario se descarga el formulario de adiestramiento",
 					"descargarFormulario");
 		}
-		Espera.espera(2000);
+		Espera.obligatoriamente(2000);
 	}
 
 	private void desplegarPestaniaDeLaTabla(String titulo) {
@@ -150,7 +150,7 @@ public class RealizaDescarga extends UIInteractionSteps {
 		if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 5) {
 			AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario se descarga el archivo CUR","descargarFormulario");
 		}
-		Espera.espera(1000);
+		Espera.obligatoriamente(1000);
 		columnaDeseada.click();
 	}
 }

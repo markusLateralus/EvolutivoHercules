@@ -50,35 +50,34 @@ Given el usuario se logea como Tecnico de Central
 @ConsultaDeEvaluaciones
 Scenario Outline: Consulta de Evaluaciones
 When el usuario se dirige a la pantalla Consulta de Evaluaciones
-And  el usario realiza una busqueda con el cliente "<cliente>" en la pantalla Consulta de Evaluaciones 
-Then el usuario puede verificar que la aplicacion realiza la busqueda correctamente
+And  el usario realiza una busqueda con el cliente "<id>" en la pantalla Consulta de Evaluaciones 
+And  selecciona el primer resultado de la busqueda en la pantalla Consulta de Evaluaciones
+Then el usuario verifica que el codigo "<codigo>" es cliente suyo
 Examples:
-|   cliente  |
-| 012363     |   #ayuntamiento de avila
+|   id    | codigo  |
+| 5055    |  012363 | 
 
 @AltaDeEvaluaciones
 Scenario Outline: Alta de Evaluaciones
 When el usuario se dirige a la pantalla Alta de Evaluaciones
-And el usario realiza una busqueda con el cliente "<cliente>" en la pantalla Alta de Evaluaciones
-And rellenamos el formulario campo provincia "<provincia>", modelo de negocio "<modeloNegocio>", empresa "<empresa>" , linea de venta "<lineaVenta>", lugar prestacion servicio "<lugarPrestacionServicio>", actividad contratada "<actividadContratada>", tecnico "<tecnico>", responsable de contrato "<responsableContrato>", responsable control periodico "<responsableControlPeriodico>" y fecha inicio contrato "<fechaInicioContrato>"
-And el usuario selecciona un proyecto y lo Guarda
-Then el usuario obtiene un idEvaluacion nuevo
+And el usario realiza una busqueda con el cliente "<cliente>" asignado a el
+Then el usuario comprueba que hay resultados de busqueda
 Examples:
-|   cliente | provincia  | modeloNegocio   | empresa   |  lineaVenta |  lugarPrestacionServicio  | actividadContratada  |  tecnico   |  responsableContrato      | responsableControlPeriodico  |  fechaInicioContrato | 
-| 012363    |  05 - Avila|   910-Limpieza  |  25       |   01        |        AVILA              |     Prueba           |    prl1    | Fernandez Casado, Ainhoa  |   Fernandez Casado, Ainhoa   |      21/11/2022      |
+|   cliente | 
+| 012363   |
 
-@ReemplazarResponasable
-Scenario Outline: Reemplazar Responasbles
+@ReemplazarResponsable
+Scenario Outline: Reemplazar Responasbles Control Periodico #cada vez que ejecute este escenario debo volver a cambiarlo 	
 When el usuario se dirige a la pantalla Reemplazar Responsables
 And el usuario cambia el responsable "<responsableViejo>"
 And el usuario selecciona una evaluacion con id "<id>"
 And el usuario elige  el responsable nuevo "<responsableNuevo>"
-And el usuario se dirige a la pantalla Consulta Evaluacion
+And el usuario accede a la pantalla Consulta Evaluacion
 Then el usuario realiza la busqueda por id "<id>"
-And  el responsable es "responsableNuevo"
+And  el responsable es "<responsableNuevo>"
 Examples:
-| responsableViejo               |   id       |     responsableNuevo          |   
-|   Fernandez Casado, Ainhoa     |   E-60428  |  Guerra Lopez, Lucas Armando     |    
+| responsableViejo    |   id     |  responsableNuevo   |   
+|   Fernandez Casado  |   60428  | Mansilla , jaime    |    
 
 @EditarFicha
 Scenario Outline: Editar Ficha
@@ -91,43 +90,43 @@ Examples:
 |   012363     |
 
 @ConsultaDeRiesgo
-Scenario Outline: Consulta de Riesgo
+Scenario Outline: Consulta de Riesgo 
 When el usuario se dirige a la pantalla Consulta de Riesgo
-And el usuario realiza la busqueda por cliente "<cliente>" en la pantalla Consulta de Riesgo
-Then el usuario comprueba que los riesgos son todos con el mismo cliente
+And el usuario realiza la busqueda por id  "<cliente>" de un cliente asignado en la pantalla Consulta de Riesgo
+And el usuario accede a la pantalla edicion riesgos
+Then el usuario comprueba el boton Guardar esta habilitado
 Examples:
 |   cliente  |
-| 012363     |
+|14721      | #si  esta asociado a un cl     15010
+#| 15601     |#no esta asociado y me sale un mensaje emergente, y boton GUARDAR esta inhabilitado
+
 
 @ConsultaDeDocumentos
 Scenario Outline: Consulta de Documentos
 When el usuario se dirige a la pantalla Consulta de Documentos
-And el usuario realiza la busqueda por cliente "<cliente>" en la pantalla Consulta de Documentos     #pendiente terminar
-Then el usuario comprueba que hay consultas con ese cliente asociado
+And el usuario realiza la busqueda por cliente "<cliente>" en la pantalla Consulta de Documentos 
+Then el usuario puede descargarse la documentacion asociada
 Examples:
-|   cliente      |
-|  Guadalajara   |
+|   cliente |
+|  097810   |   
 
 @Coordinacion
 Scenario Outline: Coordinacion
-When el usuario se dirige a la pantalla Coordinacion
+When el usuario accede a la pantalla Coordinacion
 And el usuario realiza la busqueda por cliente "<cliente>" en la pantalla Coordinacion
-And el usuario selecciona una coordinacion con ese cliente asociado
-And la aplicacion carga la pantalla Coordinacion Acciones
-And el usuario pulsa acciones y editar
-And el usuario rellena un cuestionario
-And el usuario genera nuevo CP y RAP
-Then el usuario guarda los cambios
-And el estado cambia a publicado
+And el usuario selecciona una coordinacion con ese cliente asociado para acceder a la pantalla Coordinacion Acciones
+Then el usuario se puede descargar la documentacion de coordinacion
 Examples:
-|   cliente      |
-|  Guadalajara   |
-@PublicacionesPendientes
-Scenario: Publicaciones Pendientes
-When el usuario se dirige a la pantalla Publicaciones Pendientes
-Then el usuario verifica que la tabla con resultados son todos con el mismo usuario
+|   cliente  |
+|  097810    |
 
 @AsociacionEmpleadoPuesto
 Scenario Outline: Asociacion Empleado Puesto
-When el usuario se dirige a la pantalla Asociacion Empleado Puesto    #pendiente de terminar
-And el usuario realiza la busqueda por dddddddddddddd
+When el usuario se dirige a la pantalla Asociacion Empleado Puesto    
+And el usuario realiza la busqueda por evaluacion "<evaluacion>"
+Then el usuario comprueba que los datos pertenece a una evaluacion asociada
+
+Examples:
+|evaluacion   |
+|   11525     |
+#|   525       |

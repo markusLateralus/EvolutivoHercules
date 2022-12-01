@@ -41,7 +41,7 @@ public class DescargaIGN extends UIInteractionSteps {
 			 AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario se descarga el documento de la tabla con el boton 1", "descargarIGNBoton1");
 		 }
 		 PageEdicionPuesto.botonDESCARGAR_1.click();
-		 Espera.espera(1000);
+		 Espera.obligatoriamente(1000);
 		 
 	 }
 	 
@@ -53,7 +53,7 @@ public class DescargaIGN extends UIInteractionSteps {
 			 AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario se descarga el documento de la tabla con el boton 2", "descargarIGNBoton2");
 		 }
 		 PageEdicionPuesto.botonDESCARGAR_2.click();
-		Espera.espera(1000);
+		Espera.obligatoriamente(1000);
 	 }
 	 
 	 

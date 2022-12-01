@@ -23,12 +23,12 @@ PageCoordinacionAcciones pageCoordinacionAcciones;
 	
 	 @Step("El usuario se descarga la documentacion de coordinacion")
 	    private void descargar() {
-		 espera.queSeaclicable(Duration.ofSeconds(15), PageCoordinacionAcciones.BOTON_DESCARGAR);
+		 espera.queSeaClicable(Duration.ofSeconds(15), PageCoordinacionAcciones.BOTON_DESCARGAR);
 		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==2) {
 		      AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario se descarga la documentacion de coordinacion", "descargarDocumentacion");
 		}
 		 PageCoordinacionAcciones.BOTON_DESCARGAR.click();
-		 Espera.espera(3000);
+		 Espera.obligatoriamente(3000);
 		 
 	 }
 	 

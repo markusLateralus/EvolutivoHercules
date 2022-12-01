@@ -16,11 +16,11 @@ public class NavegaAcoordinacion extends UIInteractionSteps {
 	@Step("El usuario accede a la Pantalla Coordinacion")
 	public void accede() {
 		PageEscritorio.cargarLosEnlaces();
-
+		Espera.obligatoriamente(2000);
 		for (WebElement enlace : PageEscritorio.ENLACES) {
 
 			if (enlace == PageEscritorio.MENU) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
@@ -28,7 +28,7 @@ public class NavegaAcoordinacion extends UIInteractionSteps {
 			}
 
 			if (enlace == PageEscritorio.DOCUMENTACION) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if ( AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona documentacion", "irDocumentacion");
 				}
@@ -36,7 +36,7 @@ public class NavegaAcoordinacion extends UIInteractionSteps {
 			}
 
 			if (enlace == PageEscritorio.COORDINACION_CLIENTE || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7)  {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Coordinación Cliente",
 							"irCoordinacionCliente");
@@ -45,7 +45,7 @@ public class NavegaAcoordinacion extends UIInteractionSteps {
 			}
 
 			if (enlace == PageEscritorio.COORDINACION) {
-				Espera.espera(2000);
+				Espera.obligatoriamente(2000);
 				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 2 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Coordinacion",
 							"irCoordinacion");

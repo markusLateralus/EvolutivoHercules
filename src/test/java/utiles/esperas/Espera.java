@@ -16,7 +16,7 @@ public class Espera extends UIInteractionSteps {
 		this.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(tiempo));
 	}
 
-	public static void espera(long tiempo) {
+	public static void obligatoriamente(long tiempo) {
 		try {
 			Thread.sleep(tiempo);
 		} catch (InterruptedException e) {
@@ -26,7 +26,7 @@ public class Espera extends UIInteractionSteps {
 	}
 
 	// presente, visible y habilitado
-	public void queSeaclicable(Duration tiempo, WebElement element) {
+	public void queSeaClicable(Duration tiempo, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(getDriver(), tiempo);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 
@@ -56,5 +56,16 @@ public class Espera extends UIInteractionSteps {
 	}
 	public void hastaQueLaPaginaCargue(long tiempo) {
 	getDriver().manage().timeouts().pageLoadTimeout(tiempo, TimeUnit.SECONDS);
+	}
+	
+	
+	public void abrirNuevaPestaniaNavegador() {
+		this.implicitamente(10);  
+		//#abrimos la nueva pestaña  AVERIGUAR COMO SE USA
+		//getDriver().execute_script("window.open('https://www.qalovers.com', 'new tab')");
+	}
+	
+	public void refrescarNavegador() {
+		//getDriver().refresh();
 	}
 }

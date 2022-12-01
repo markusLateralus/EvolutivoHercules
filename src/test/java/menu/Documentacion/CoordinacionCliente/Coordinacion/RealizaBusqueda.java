@@ -15,7 +15,7 @@ public class RealizaBusqueda extends UIInteractionSteps {
 PageCoordinacion coordinacion;
 	private Espera espera=new Espera();
 	
-    @Step("El usuario realiza una búsqueda en el campo cliente {cliente}")
+    @Step("El usuario busca el cliente {0}")
     public void porCliente(String cliente) {
     	this.rellenarCampoCliente(cliente);
     	this.pulsarBotonBuscar();
@@ -23,17 +23,17 @@ PageCoordinacion coordinacion;
 	
 
 	
-	 @Step("El usuario rellena el campo cliente {cliente}")
+	 @Step("El usuario rellena el campo cliente con el nombre {0}")
 	    private void rellenarCampoCliente(String cliente) {
 		 espera.queSeaVisible(Duration.ofSeconds(15), PageCoordinacion.CAMPO_CLIENTE);
 		 PageCoordinacion.CAMPO_CLIENTE.sendKeys(cliente);
-		 Espera.espera(1500);
+		 Espera.obligatoriamente(1500);
 		 PageCoordinacion.CAMPO_CLIENTE.sendKeys(Keys.ENTER);
 	 }
 	 
 	 @Step("El usuario pulsa el boton buscar")
 	 private void pulsarBotonBuscar() {
-		 espera.queSeaclicable(Duration.ofSeconds(15), PageCoordinacion.BOTON_BUSCAR);
+		 espera.queSeaClicable(Duration.ofSeconds(15), PageCoordinacion.BOTON_BUSCAR);
 		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==2) {
 		      AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario realiza la búsqueda", "buscarCoordinacion");
 		}
