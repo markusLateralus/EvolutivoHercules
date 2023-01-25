@@ -46,7 +46,7 @@ public class DescargarCoordinacionStep {
 	RealizaLaDescarga realizaLaDescarga;
 	
 
-	@Before("@descargaDocumentacion")
+	@Before("@descargaDocumentacion")  //2 usuarios
 	public void antes(Scenario scenario) {
 		//reiniciamos los contadores NO ES NECESARIO USARLO, YA QUE SOLO HAY DOS USUARIOS QUE PROBAR
 		//if(CONTADOR==3)CONTADOR=1;

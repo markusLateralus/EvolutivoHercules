@@ -19,7 +19,7 @@ public class PdfLogin extends FactoryMethodPdf {
 	public static String Ruta_Escenario="";
 	public static String Ruta_Final="";
 	static boolean Creada_Ruta_Generica_Login =false;
-	static String Ruta_Plantilla = "./documentos/login/plantilla.pdf";
+	static String Ruta_Plantilla = "";
 	
 	//esta funcion solo debe ejecutarse la primera vez que se llama en FactoriaPDF
 	public static boolean crearArchvivo(String rutaEscenario) {
@@ -32,17 +32,16 @@ public class PdfLogin extends FactoryMethodPdf {
 		Ruta_Escenario=nombreEscenario;
 		Ruta_Final=Ruta_Raiz+Ruta_Escenario+"/"; //creamos la ruta para el escenario
 		Ruta_Archivo=Ruta_Final+ nombreEscenario;//creamos la ruta para el archvivo
+		Ruta_Plantilla=Ruta_Raiz+Ruta_Escenario+"/plantilla.pdf";
 		CreadorPdf.IMAGENES_PARA_PDF = CapturaPantalla.ImagenesPNG;
-		//Creada_Ruta_Generica_Login=true;
+		Creada_Ruta_Generica_Login=true;
 		if (Creada_Ruta_Generica_Login) {
 			if (vueltaEjecucion == 1) {
-				System.out.println("vuelta 1 " + Ruta_Archivo);
 				CreadorPdf.escribePlantilla(Ruta_Plantilla, tituloPortada, descripcion,sprint);
 				CreadorPdf.escribeDocumento(Ruta_Archivo + vueltaEjecucion + ".pdf",
 						CreadorPdf.IMAGENES_PARA_PDF, Usuario.USUARIOS[vueltaEjecucion-1]);
 
 			} else {
-				System.out.println("vuelta 2 " + Ruta_Archivo);
 				CreadorPdf.escribeDocumento(Ruta_Archivo + vueltaEjecucion + ".pdf",CreadorPdf.IMAGENES_PARA_PDF, 
 						Usuario.USUARIOS[vueltaEjecucion - 1]);
 				if (vueltaEjecucion == 4) {

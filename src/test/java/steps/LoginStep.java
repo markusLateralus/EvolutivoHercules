@@ -36,19 +36,11 @@ public class LoginStep {
 	private static int CONTADOR=1;
 	private String rutaEscenario="";
 	
-	
 	@Steps 
 	Navega navega;
 	
 	@Steps
 	Logarse logarse;
-	
-	
-	
-	
-	
-	
-	
 	
 	@Steps
 	VerificarNombreUsuario verificarNombreUsuario;
@@ -57,20 +49,18 @@ public class LoginStep {
 	VerificarRol verificarRol;
 
 	
-	
-
 	@Before()//"@loginCorrecto or @loginIncorrecto"
 	public void antes(Scenario scenario) {
-		AlmacenRutasDeCapturaPantalla.setValorRuta(7);
+		//AlmacenRutasDeCapturaPantalla.setValorRuta(6);
 		
 		//reiniciamos los contadores
 		if(CONTADOR==5)CONTADOR=1;
-		if(	CapturaPantalla.CONTADOR_VUELTAS_APLICACION==5)CapturaPantalla.CONTADOR_VUELTAS_APLICACION=1;
+	//	if(	CapturaPantalla.CONTADOR_VUELTAS_APLICACION==5)CapturaPantalla.CONTADOR_VUELTAS_APLICACION=1;
 		Collection<String> etiquetas=scenario.getSourceTagNames();
 		for(String etiqueta: etiquetas) {
 			rutaEscenario=etiqueta;	 //@loginIncorrecto
 		}
-		//AlmacenRutasDeCapturaPantalla.Ruta_Escenario=rutaEscenario;
+		AlmacenRutasDeCapturaPantalla.Ruta_Escenario=rutaEscenario;
 		System.out.println("dentro before loginStep " + CapturaPantalla.CONTADOR_VUELTAS_APLICACION);
 	}
 
@@ -81,7 +71,7 @@ public class LoginStep {
 	}
 	@Given("escribe el nombre y escribe el password")
 	public void escribe_el_nombre_y_escribe_el_password(DataTable dataTable) {
-		/*List<List<String>> rows = dataTable.asLists(String.class);
+		List<List<String>> rows = dataTable.asLists(String.class);
 			for (List<String> row : rows) {
 				Usuario.agregar(new Usuario(row.get(0), row.get(1), row.get(2)));
 			}
@@ -89,12 +79,12 @@ public class LoginStep {
 			
 		logarse.rellenarUsuario(Usuario.usuarios.get(CONTADOR).nombre);
 		logarse.rellenarPassword(Usuario.usuarios.get(CONTADOR).password);
-*/
+
 	}
 
 	@Given("hace click en el boton Login")
 	public void hace_click_en_el_boton_login() {
-	//	logarse.pulsarBotonLogin();
+		logarse.pulsarBotonLogin();
 	}
 	@When("el usuario verifica su nombre")
 	public void el_usuario_verifica_su_nombre() {
@@ -113,20 +103,31 @@ public class LoginStep {
 	}
 	@Then("el usuario no accede a Hercules")
 	public void el_usuario_no_accede_a_hercules() {
-	    
+		 System.out.println("estamos con el escnario login incorrecto");
 	}
 	
 
 @After()//"@loginCorrecto or @loginIncorrecto"
 public void guardar(Scenario escenario) {
-	//FactoriaPDF.crearPdf(AlmacenRutasDeCapturaPantalla.VALOR_RUTA,	CapturaPantalla.CONTADOR_VUELTAS_APLICACION,rutaEscenario,TituloPortada.TITULO_LOGIN,
-		//	Descripcion.DESCRIPCION_LOGIN,Sprint.Sprint1 );
-	CapturaPantalla.CONTADOR_VUELTAS_APLICACION++;
+	/*
+	Collection<String> etiquetas = escenario.getSourceTagNames();
+	for (String etiqueta : etiquetas) {
+		if (etiqueta.equalsIgnoreCase("@loginCorrecto")) {
+			FactoriaPDF.crearPdf(AlmacenRutasDeCapturaPantalla.VALOR_RUTA,	CONTADOR,rutaEscenario,TituloPortada.TITULO_LOGIN_CORRECTO,
+					Descripcion.DESCRIPCION_LOGIN_CORRECTO,Sprint.Sprint1 );
+	    }else if (etiqueta.equalsIgnoreCase("@loginIncorrecto")) {
+	    	FactoriaPDF.crearPdf(AlmacenRutasDeCapturaPantalla.VALOR_RUTA,	CONTADOR,rutaEscenario,TituloPortada.TITULO_LOGIN_INCORRECTO,
+	    			Descripcion.DESCRIPCION_LOGIN_INCORRECTO,Sprint.Sprint1 );
+        
+	    }
+	}*/
+	
+//	CapturaPantalla.CONTADOR_VUELTAS_APLICACION++;
 	CONTADOR++;
 	//reseteamos las rutas
 	//AlmacenRutasDeCapturaPantalla.Ruta_Escenario="";
 	rutaEscenario="";
-	
+	System.out.println("dentro after loginStep " + CapturaPantalla.CONTADOR_VUELTAS_APLICACION );
       
        }
 	

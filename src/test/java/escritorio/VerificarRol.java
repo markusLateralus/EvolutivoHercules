@@ -9,6 +9,8 @@ import net.thucydides.core.annotations.Step;
 public class VerificarRol extends UIInteractionSteps{
 	
 	public PageEscritorio inicio;
+	AlmacenRutasDeCapturaPantalla almacenRutasDeCapturaPantalla;
+	
 	Espera espera=new Espera();
 	@Step("verifico el rol {rol}")
 	public String verificarRol(String rol) {
@@ -17,7 +19,7 @@ public class VerificarRol extends UIInteractionSteps{
 		String[] lista=todo.split("•");
 		String rol2=lista[1];
        Espera.obligatoriamente(2);
-       AlmacenRutasDeCapturaPantalla.guardarRuta("Accedemos correctamente a la aplicación" ,"pantallaInicio");
+       almacenRutasDeCapturaPantalla.guardarRuta("Accedemos correctamente a la aplicación" ,"pantallaInicio");
 		return rol2;
 	}
 

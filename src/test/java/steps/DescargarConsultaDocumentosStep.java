@@ -42,15 +42,12 @@ public class DescargarConsultaDocumentosStep {
 	@Before("@descargaConsultaDocumentos")
 	public void antes(Scenario escenario) {
 		if(CONTADOR==5)CONTADOR=1;
-		//if(	CapturaPantalla.CONTADOR_VUELTAS_APLICACION==5)CapturaPantalla.CONTADOR_VUELTAS_APLICACION=1; //solo es un usuario
-		
 		Collection<String> etiquetas=escenario.getSourceTagNames();
+	
 		for(String esc: etiquetas) {
 			rutaEscenario=esc;	
 		}
 		AlmacenRutasDeCapturaPantalla.Ruta_Escenario=rutaEscenario;
-		
-		//AlmacenRutasDeCapturaPantalla.setValorRuta(1);
 	}
 	@Given("el usuario se logea de forma correcta con usuario: {string}, password: {string} y con el rol: {string}")
 	public void el_usuario_se_logea_de_forma_correcta_con_usuario_password_y_con_el_rol(String usuario, String password, String string3) {

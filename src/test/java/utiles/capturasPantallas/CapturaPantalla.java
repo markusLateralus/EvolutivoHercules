@@ -12,6 +12,8 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.Scenario;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 
@@ -26,6 +28,7 @@ public class CapturaPantalla extends UIInteractionSteps{
 	public static String RUTA_IMAGEN_DOCUMENTACION_ASOCIACIONEMPLEADOPUESTO_FORMULARIOADIESTRAMIENTO="./documentos/FormularioAdiestramiento/";
 	public static String RUTA_IMAGEN_ALTA_DE_USUARIO="./documentos/AltaDeUsuario/";
 	public static String RUTA_IMAGEN_MODIFICACION_PERFIL_TECNICODEZONA="./documentos/ModificacionPerfilTecnicoDeZona/";
+	public static String RUTA_IMAGEN_CAMBIAR_EDITOR_TEXTO="./documentos/Editor_Texto/";
 	public static String RUTAS_IMAGENES[]= {
 							RUTA_IMAGEN_LOGIN,
 							RUTA_IMAGEN_DOCUMENTACION_COORDINACIONCLIENTE_CONSULTADOCUMENTACION,
@@ -34,7 +37,8 @@ public class CapturaPantalla extends UIInteractionSteps{
 						  RUTA_IMAGEN_HERRAMIENTAS_ADMINISTRACION_INSTRUCIONESGUIAS,
 						  RUTA_IMAGEN_DOCUMENTACION_ASOCIACIONEMPLEADOPUESTO_FORMULARIOADIESTRAMIENTO,
 						  RUTA_IMAGEN_ALTA_DE_USUARIO,
-						  RUTA_IMAGEN_MODIFICACION_PERFIL_TECNICODEZONA};
+						  RUTA_IMAGEN_MODIFICACION_PERFIL_TECNICODEZONA,
+						  RUTA_IMAGEN_CAMBIAR_EDITOR_TEXTO};
 	
 	
 	
@@ -57,6 +61,9 @@ public class CapturaPantalla extends UIInteractionSteps{
 			}
 		
 	}
+	
+	
+	
 	/*
 	 public void hacerCapturaPantalla(String titulo) {
 		  File file=((TakesScreenshot)this.getDriver()).getScreenshotAs(OutputType.FILE);
@@ -69,15 +76,5 @@ public class CapturaPantalla extends UIInteractionSteps{
 			}
 	}*/
 	 
-	 public static void capturaError(WebDriver driver, String filename) {
-		  String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-		  TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-		  File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		  try {
-		   FileUtils.copyFile(source, new File("./errores/"+filename+"_"+dateName+".png"));
-		  } catch (Exception e) {
-		   // TODO Auto-generated catch block
-		   e.getMessage();
-		  }
-		 }
+	
 }

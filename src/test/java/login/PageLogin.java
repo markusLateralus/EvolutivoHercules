@@ -18,6 +18,5 @@ public class PageLogin extends PageObject{
 	@FindBy(css="button[class=\"btn btn-primary\"]")
 	static WebElement botonLogin;
 
-
 	
 }

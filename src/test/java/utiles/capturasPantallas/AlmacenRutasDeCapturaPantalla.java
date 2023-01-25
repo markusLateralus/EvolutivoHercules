@@ -27,7 +27,11 @@ public class AlmacenRutasDeCapturaPantalla {
 			
 		}else if(VALOR_RUTA==7){
 			CapturaPantalla.guardarCapturaPantalla(CapturaPantalla.RUTAS_IMAGENES[7]+Ruta_Escenario+"/",descripcion,tituloImagen);
+			
+		}else if(VALOR_RUTA==8){
+			CapturaPantalla.guardarCapturaPantalla(CapturaPantalla.RUTAS_IMAGENES[8]+Ruta_Escenario+"/",descripcion,tituloImagen);
 
+		
 		}else {
 		
 			System.out.println("NO HAY MAS RUTAS ESTABLECIDAS");

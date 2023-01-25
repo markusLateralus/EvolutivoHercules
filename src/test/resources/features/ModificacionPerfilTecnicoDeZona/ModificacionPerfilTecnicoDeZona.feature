@@ -82,12 +82,15 @@ Examples:
 @EditarFicha
 Scenario Outline: Editar Ficha
 When el usuario se dirige a la pantalla de Editar Ficha
-And el usuario realiza la busqueda por cliente "<cliente>" en la pantalla Editar Ficha
-And el usuario selecciona la primera ficha del cliente seleccionado
-And se carga la pantalla Edicion Ficha         #perdinente de termiar
+And el usuario realiza la busqueda por id "<id>" en la pantalla Editar Ficha
+And el usuario accede a la pantalla Editar Ficha
+And el usuario guarda los cambios
+Then el usuario se dirige a la pantalla Publicaciones Pendientes
+And el usuario busca por id "<id>"
+And comprueba que ha sido modificada.   
 Examples:
-|  cliente     |
-|   012363     |
+|    id       |
+|   24151     |
 
 @ConsultaDeRiesgo
 Scenario Outline: Consulta de Riesgo 

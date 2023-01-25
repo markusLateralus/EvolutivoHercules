@@ -18,7 +18,7 @@ public class PageEscritorio extends PageObject{
 	@FindBy(xpath="//div[@class=\"row ng-star-inserted\"]/descendant::div[@class=\"col-4\"]")
 	public static WebElement contenedorNombreCompleto;
 
-	@FindBy(xpath="(//span[contains(text(),'menu')])[1]")
+	@FindBy(xpath="(//span[@class='material-icons'])[1]")
 	public static WebElement MENU;
 	@FindBy(xpath="//mat-icon[@class=\"mat-icon notranslate mat-icon-rtl-mirror material-icons mat-icon-no-color\"]")
 	public static WebElement EVALUACIONES;
@@ -71,6 +71,9 @@ public class PageEscritorio extends PageObject{
 	  public static WebElement PUBLICACIONES_PENDIENTES;
 	  @FindBy(xpath="(//div[normalize-space()='Alta Evaluación'])[1]")
 	  public static WebElement ALTA_EVALUACION;
+	  @FindBy(xpath="(//span[normalize-space()='Menú Principal'])[1]")
+	  public static WebElement MENU_PRINCIPAL;
+	 
 	  public static ArrayList <WebElement>ENLACES=new ArrayList<WebElement>();
 	  public static void cargarLosEnlaces() {
 		  ENLACES.add(MENU);
@@ -94,6 +97,7 @@ public class PageEscritorio extends PageObject{
 		  ENLACES.add(CONSULTA_RIESGOS);
 		  ENLACES.add(PUBLICACIONES_PENDIENTES);
 		  ENLACES.add(ALTA_EVALUACION);
+		  ENLACES.add(MENU_PRINCIPAL);
 	  }
 
 }

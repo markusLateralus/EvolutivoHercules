@@ -9,8 +9,8 @@ import utiles.esperas.Espera;
 public class NavegaAadministracionUsuarios extends UIInteractionSteps{
 
 	Espera espera = new Espera();
-
-	@Step("El usuario accede a la pantalla Instruccciones Guias")
+	AlmacenRutasDeCapturaPantalla almacenRutasDeCapturaPantalla;
+	@Step("El usuario accede a la pantalla Administracion Usuarios")
 	public void accede() {
 		PageEscritorio.cargarLosEnlaces();
 		Espera.obligatoriamente(2500);

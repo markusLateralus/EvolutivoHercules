@@ -39,7 +39,7 @@ public class DescargarInstruccionesGuiasStep {
 	@Steps
 	RealizaDescarga realizaDescarga;
 
-	@Before("@descargaInstruccionesGuias")
+	@Before("@descargaInstruccionesGuias")  //1 usuario
 	public void antes(Scenario escenario) {
 		//reiniciamos los contadores
 				Collection<String> etiquetas=escenario.getSourceTagNames();

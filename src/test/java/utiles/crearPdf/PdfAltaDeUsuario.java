@@ -39,7 +39,6 @@ public class PdfAltaDeUsuario  extends FactoryMethodPdf {
 		CreadorPdf.IMAGENES_PARA_PDF = CapturaPantalla.ImagenesPNG;
 		Creada_Ruta_Raiz=true;
 		if (Creada_Ruta_Raiz) {
-			System.out.println("SÍ SE HA CREADO LA RUTA" + " vuelta ejecucion " + vueltaEjecucion);
 			if (vueltaEjecucion == 1) {
 				System.out.println("TITULO "+ tituloPortada.getTitulo() ); 
 				CreadorPdf.escribePlantilla(Ruta_Plantilla, tituloPortada, descripcion, sprint);

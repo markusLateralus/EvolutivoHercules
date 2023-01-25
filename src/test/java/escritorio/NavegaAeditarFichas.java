@@ -16,7 +16,7 @@ public class NavegaAeditarFichas extends UIInteractionSteps {
 	@Step("El usuario accede a la Pantalla Editar Fichas")
 	public void accede() {
 		PageEscritorio.cargarLosEnlaces();
-
+	
 		for (WebElement enlace : PageEscritorio.ENLACES) {
 
 			if (enlace == PageEscritorio.MENU) {

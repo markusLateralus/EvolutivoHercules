@@ -19,6 +19,7 @@ public class RealizaBusqueda extends UIInteractionSteps {
 	private PageAltaEvaluacion pageAltaEvaluacion;
 	private Espera espera=new Espera();
 	private JavaS javaS;
+	AlmacenRutasDeCapturaPantalla almacenRutasDeCapturaPantalla;
 	private boolean esVisible;
 	@Step("El usuario busca el cliente {0}")
 	public void porClienteAsignado(String cliente) {
@@ -52,7 +53,7 @@ public class RealizaBusqueda extends UIInteractionSteps {
 		System.out.println("NO HAY RESULTADOS EN LA BUSQUEDA");
 		 esVisible=false;
 		 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7) {
-			  AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario comprueba que no hay resultados en la busqueda", "sinResultadosBusqueda");
+			 AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario comprueba que no hay resultados en la busqueda", "sinResultadosBusqueda");
 		}
 	}
 	
@@ -62,7 +63,7 @@ public class RealizaBusqueda extends UIInteractionSteps {
 	 @Step("El usuario comprueba que existen resultados de la busqueda")
 	 public boolean verificaSiHayResultadoEnLaBusqueda() {
 	 if(AlmacenRutasDeCapturaPantalla.VALOR_RUTA==7) {
-		  AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario comprueba los resultados de la busqueda", "resultadosBusqueda");
+		 AlmacenRutasDeCapturaPantalla.guardarRuta( "El usuario comprueba los resultados de la busqueda", "resultadosBusqueda");
 	}
 		return esVisible;
 		}

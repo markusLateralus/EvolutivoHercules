@@ -3,7 +3,8 @@ package utiles.componentesDelPdf;
 public enum Descripcion {
 
 	
-	DESCRIPCION_LOGIN("mostramos los pasos para verificar la prueba de Login"),
+	DESCRIPCION_LOGIN_CORRECTO("mostramos los pasos para verificar la prueba de Login correctamente"),
+	DESCRIPCION_LOGIN_INCORRECTO("mostramos los pasos para verificar la prueba de Login incorrectamente"),
 	DESCRIPCION_INSTRUCCIONESGUIAS("df"),
 	DESCRIPCION_DESCARGARCOORDINACION("pasos para descargar coordinación"),
 	DESCRIPCION_DESCARGAR_CONSULTA_DOCUMENTACION("pasos para descargar Consulta documentacion"),
@@ -25,8 +26,10 @@ public enum Descripcion {
 			+ "Pantalla que facilita la gestión de los documentos aportados por el cliente y su consulta, tiene dos zonas diferenciadas, la superior donde se ponen los criterios de selección de la consulta de los documentos, y la inferior para gestión y visionado de los datos de los documentos hallados en la consulta.\r\n"
 			+ ""),
 	PUBLICACIONES_PENDIENTES_CON_TECNICO_DE_ZONA("En la pantalla de publicaciones pendientes, sólo se mostrarán aquellas relacionadas con las evaluaciones o fichas de los clientes asignados al Técnico de Zona, por lo que no se le mostrará la opción “Mostrar todos”."),
-	ASOCIACION_EMPLEADO_PUESTO_CON_TECNICO_DE_ZONA("En la asociación del empleado al puesto, el Técnico de Zona sólo podrá asociar empleados a las evaluaciones de los clientes asignados, no siendo posible realizar búsquedas a través de la opción Centro.");
-;
+	ASOCIACION_EMPLEADO_PUESTO_CON_TECNICO_DE_ZONA("En la asociación del empleado al puesto, el Técnico de Zona sólo podrá asociar empleados a las evaluaciones de los clientes asignados, no siendo posible realizar búsquedas a través de la opción Centro."),
+	///////////////////////////////////////////////////////////////////////////////////////
+	MEDIAS("Verificamos que en el editor MEDIDAS puede agregar imágenes e insertar texto al lado de la imagen"),
+	MEDIAS_A_TERCEROS("Verificamos que en el editor MEDIDAS A TERCEROS puede agregar imágenes e insertar texto al lado de la imagen");
 
 private String descripcion;
 

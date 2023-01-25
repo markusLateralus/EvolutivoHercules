@@ -12,16 +12,20 @@ import utiles.esperas.Espera;
 public class NavegaAconsultaRiesgos extends UIInteractionSteps {
 
 	Espera espera = new Espera();
+	PageEscritorio pageEscritorio;
 
 	@Step("El usuario accede a la Pantalla Consulta Riesgos")
 	public void accede() {
+		pageEscritorio.getDriver().get("https://prehercules.eulen.com/hercules3/riesgos/consulta-riesgos");
+		
+		/*
 		PageEscritorio.cargarLosEnlaces();
 
 		for (WebElement enlace : PageEscritorio.ENLACES) {
 
 			if (enlace == PageEscritorio.MENU) {
 				Espera.obligatoriamente(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 8) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario accede al Menu", "accederMenu");
 				}
 				enlace.click();
@@ -29,7 +33,7 @@ public class NavegaAconsultaRiesgos extends UIInteractionSteps {
 
 			if (enlace == PageEscritorio.RIESGOS) {
 				Espera.obligatoriamente(2000);
-				if ( AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+				if ( AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 8) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Riesgos", "irRiesgo");
 				}
 				enlace.click();
@@ -37,7 +41,7 @@ public class NavegaAconsultaRiesgos extends UIInteractionSteps {
 
 			if (enlace == PageEscritorio.CONSULTA_RIESGOS) {
 				Espera.obligatoriamente(2000);
-				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+				if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 8) {
 					AlmacenRutasDeCapturaPantalla.guardarRuta("El usuario selecciona Consulta Riesgos",
 							"irConsultaRiesgos");
 				}
@@ -46,5 +50,6 @@ public class NavegaAconsultaRiesgos extends UIInteractionSteps {
 
 		
 		}
+		*/
 	}
 }

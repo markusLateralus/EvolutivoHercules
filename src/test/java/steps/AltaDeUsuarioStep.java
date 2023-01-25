@@ -39,7 +39,7 @@ public class AltaDeUsuarioStep {
 	@Steps
 	ModificaRoles modificaRoles;
 	
-	
+	AlmacenRutasDeCapturaPantalla almacenRutasDeCapturaPantalla;
 
 	@Before("@altaUsuario or @bajaUsuario")
 	public void antes(Scenario escenario) {

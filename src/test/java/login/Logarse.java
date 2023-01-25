@@ -17,7 +17,7 @@ public class Logarse extends UIInteractionSteps {
 
 //	private PageLogin pageLogin;
 	Espera espera=new Espera();
-	
+	AlmacenRutasDeCapturaPantalla almacenRutasDeCapturaPantalla;
 	 @Step("el usuario escribe su usuario {usuario}, su password {password} y pulsa el boton Login")
 	    public void conUsuarioYpassword(String usuario, String password) {
 	    	this.rellenarUsuario(usuario);

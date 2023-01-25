@@ -22,7 +22,7 @@ public class RealizaBusqueda extends UIInteractionSteps {
 		espera.queSeaClicable(Duration.ofSeconds(5), PageConsultaRiesgo.CAMPO_ID);
 		PageConsultaRiesgo.CAMPO_ID.sendKeys(id);
 		Espera.obligatoriamente(2000);
-		 if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+		 if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 8) {
 				AlmacenRutasDeCapturaPantalla.guardarRuta("el usuario realiza la busqueda por id","buscarPorId");
 				   }
 		espera.queSeaClicable(Duration.ofSeconds(5), PageConsultaRiesgo.BOTON_BUSCAR);
@@ -32,7 +32,7 @@ public class RealizaBusqueda extends UIInteractionSteps {
 	@Step("el usuario selecciona el primer resultado de la busqueda")
 	public void seleccionaResultadoBusqueda() {
 		Espera.obligatoriamente(2000);
-		 if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7) {
+		 if (AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 7 || AlmacenRutasDeCapturaPantalla.VALOR_RUTA == 8) {
 				AlmacenRutasDeCapturaPantalla.guardarRuta("el usuario accede a la pantalla Edicion Riesgo","irEdicionRiesgo");
 				   }
 		espera.queSeaClicable(Duration.ofSeconds(5), PageConsultaRiesgo.PRIMER_RESULTADO_BUSQUEDA);

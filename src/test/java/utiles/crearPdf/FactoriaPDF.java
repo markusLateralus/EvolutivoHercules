@@ -75,6 +75,13 @@ public class FactoriaPDF {
 			}
 		
 		}
+		if (valorRuta == 8) { // Solo ES UN USUARIO
+			if (vueltaEjecucion == 1) {
+				PdfCambioDeEditorTexto.crearArchivo(nombreEsceneario);
+				PdfCambioDeEditorTexto.crearPdf(vueltaEjecucion, nombreEsceneario, tituloPortada, descripcion,sprint);
+			}
+		
+		}
 
 	}
 

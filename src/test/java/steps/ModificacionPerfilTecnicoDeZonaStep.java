@@ -9,6 +9,7 @@ import escritorio.NavegaAconsultaDeDocumentos;
 import escritorio.NavegaAconsultaEvaluacion;
 import escritorio.NavegaAconsultaRiesgos;
 import escritorio.NavegaAcoordinacion;
+import escritorio.NavegaAeditarFichas;
 import escritorio.NavegaAreemplazarResponsables;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -23,6 +24,7 @@ import menu.Evaluaciones.ConsultaEvaluacion.ResultadoDeLaBusqueda;
 import menu.Evaluaciones.EdicionEvaluacion.Verifica;
 import menu.Evaluaciones.ReemplazarResponsable.IrAconsultaEvaluacion;
 import menu.Evaluaciones.ReemplazarResponsable.ReemplazaResponsable;
+import menu.Fichas.EditarFichas.Edita;
 import menu.Riesgos.EdicionRiesgos.GuardaRiesgo;
 import modelo.Trabajador;
 import net.thucydides.core.annotations.Steps;
@@ -88,6 +90,16 @@ public class ModificacionPerfilTecnicoDeZonaStep {
 	menu.Riesgos.ConsultaRiesgos.RealizaBusqueda realizaBusquedaConsultaRiesgo;
 	@Steps
 	GuardaRiesgo guardaRiesgo;
+	@Steps
+	NavegaAeditarFichas navegaAeditarFicha;
+	@Steps 
+	menu.Fichas.EditarFichas.RealizaBusqueda realizaBusquedaEditarFicha;
+	@Steps
+	Edita edita;
+	@Steps
+	menu.Fichas.EditarFichas.NavegaPublicacionesPendiente navegaPublicacionesPendiente;
+	@Steps
+	menu.Documentacion.PublicacionesPendientes.RealizaBusqueda realizaBusquedaPublicacionPendiente;
 
 	
 	List<TituloPortada> titulosPortada = new ArrayList<TituloPortada>();
@@ -119,7 +131,7 @@ public class ModificacionPerfilTecnicoDeZonaStep {
 	public void antes(Scenario escenario) {
 		//reiniciamos los contadores
 		if(CONTADOR==2)CONTADOR=1;
-		if(	CapturaPantalla.CONTADOR_VUELTAS_APLICACION==2)CapturaPantalla.CONTADOR_VUELTAS_APLICACION=1; //solo es un usuario
+		//if(	CapturaPantalla.CONTADOR_VUELTAS_APLICACION==2)CapturaPantalla.CONTADOR_VUELTAS_APLICACION=1; //solo es un usuario
 		this.llenarEnumerados();
 		Collection<String> etiquetas=escenario.getSourceTagNames();
 		for(String esc: etiquetas) {
@@ -207,26 +219,37 @@ public class ModificacionPerfilTecnicoDeZonaStep {
 	    
 	}
 
-	/*
+	
 	//EditarFicha
 	@When("el usuario se dirige a la pantalla de Editar Ficha")
 	public void el_usuario_se_dirige_a_la_pantalla_de_editar_ficha() {
-	   
+		navegaAeditarFicha.accede();
 	}
-	@When("el usuario realiza la busqueda por cliente {string} en la pantalla Editar Ficha")
-	public void el_usuario_realiza_la_busqueda_por_cliente_en_la_pantalla_editar_ficha(String string) {
-	   
+	@When("el usuario realiza la busqueda por id {string} en la pantalla Editar Ficha")
+	public void el_usuario_realiza_la_busqueda_por_id_en_la_pantalla_editar_ficha(String string) {
+		realizaBusquedaEditarFicha.porID(string);
 	}
-	@When("el usuario selecciona la primera ficha del cliente seleccionado")
-	public void el_usuario_selecciona_la_primera_ficha_del_cliente_seleccionado() {
-	   
+	@When("el usuario accede a la pantalla Editar Ficha")
+	public void el_usuario_accede_a_la_pantalla_editar_ficha() {
+		realizaBusquedaEditarFicha.seleccionaPrimerResultado();
 	}
-	@When("se carga la pantalla Edicion Ficha         #perdinente de termiar")
-	public void se_carga_la_pantalla_edicion_ficha_perdinente_de_termiar() {
-	    
+	@When("el usuario guarda los cambios")
+	public void el_usuario_guarda_los_cambios() {
+				edita.guardaCambios();
+	}
+	@Then("el usuario se dirige a la pantalla Publicaciones Pendientes")
+	public void el_usuario_se_dirige_a_la_pantalla_publicaciones_pendientes() {
+		navegaPublicacionesPendiente.accede();
+	}
+	@Then("el usuario busca por id {string}")
+	public void el_usuario_busca_por_id(String string) {
+		realizaBusquedaPublicacionPendiente.porID(string);
+	}
+	@Then("comprueba que ha sido modificada.")
+	public void comprueba_que_ha_sido_modificada() {
+		realizaBusquedaPublicacionPendiente.guardarCambios();
 	}
 	
-	*/
 	
 
 	
